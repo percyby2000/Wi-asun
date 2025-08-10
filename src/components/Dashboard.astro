@@ -1,0 +1,221 @@
+---
+import { createClient } from '@supabase/supabase-js';
+const supabaseUrl = import.meta.env.PUBLIC_SUPABASE_URL;
+const supabaseKey = import.meta.env.PUBLIC_SUPABASE_ANON_KEY;
+const supabase = createClient(supabaseUrl, supabaseKey);
+
+let productos = [];
+try {
+  const { data } = await supabase.from('products').select('*').order('created_at', { ascending: false });
+  if (data) productos = data;
+} catch (e) {}
+---
+
+<div class="max-w-6xl mx-auto py-8 px-4">
+  <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-8 gap-4">
+    <div>
+      <h1 class="text-3xl font-bold text-teal-800 flex items-center gap-2">
+        <svg class="w-8 h-8 text-orange-400" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V7M16 3v4M8 3v4m-5 4h18"/></svg>
+        Dashboard Admin
+      </h1>
+      <p class="text-gray-600 mt-1">Bienvenido, <span class="font-semibold" id="admin-email"></span></p>
+    </div>
+    <button id="open-modal-btn" class="bg-gradient-to-r from-orange-400 to-lime-400 hover:from-orange-500 hover:to-lime-500 text-white px-6 py-3 rounded-lg font-bold shadow-lg transition-all text-lg flex items-center gap-2">
+      <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 4v16m8-8H4"/></svg>
+      Agregar Producto
+    </button>
+  </div>
+
+  <!-- Modal Agregar Producto -->
+  <div id="modal-bg" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center hidden">
+    <form id="add-product-form" class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md relative">
+      <button type="button" id="close-modal-btn" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-2xl">&times;</button>
+      <h2 class="text-xl font-bold mb-4 text-teal-700">Nuevo Producto</h2>
+      <div class="space-y-3">
+        <input type="text" id="product-name" placeholder="Nombre*" class="w-full border rounded px-4 py-2" required />
+        <textarea id="product-description" placeholder="Descripción" class="w-full border rounded px-4 py-2"></textarea>
+        <input type="number" id="product-price" placeholder="Precio*" class="w-full border rounded px-4 py-2" required />
+        <input type="text" id="product-image" placeholder="Imagen (URL)" class="w-full border rounded px-4 py-2" />
+        <select id="product-category" class="w-full border rounded px-4 py-2" required>
+          <option value="libros">Libros</option>
+          <option value="juegos">Juegos</option>
+          <option value="accesorios">Accesorios</option>
+          <option value="materiales">Materiales</option>
+        </select>
+        <input type="number" id="product-stock" placeholder="Stock" class="w-full border rounded px-4 py-2" min="0" />
+      </div>
+      <div id="form-error" class="text-red-600 mt-2 hidden"></div>
+      <div id="form-success" class="text-green-600 mt-2 hidden"></div>
+      <button type="submit" class="w-full mt-4 bg-gradient-to-r from-orange-400 to-lime-400 hover:from-orange-500 hover:to-lime-500 text-white py-3 rounded-lg font-bold text-lg transition-all">Subir Producto</button>
+    </form>
+  </div>
+
+  <!-- Modal Editar Producto -->
+  <div id="modal-edit-bg" class="fixed inset-0 bg-black/40 z-50 flex items-center justify-center hidden">
+    <form id="edit-product-form" class="bg-white rounded-2xl shadow-2xl p-8 w-full max-w-md relative">
+      <button type="button" id="close-edit-modal-btn" class="absolute top-3 right-3 text-gray-400 hover:text-red-500 text-2xl">&times;</button>
+      <h2 class="text-xl font-bold mb-4 text-teal-700">Editar Producto</h2>
+      <div class="space-y-3">
+        <input type="hidden" id="edit-product-id" />
+        <input type="text" id="edit-product-name" placeholder="Nombre*" class="w-full border rounded px-4 py-2" required />
+        <textarea id="edit-product-description" placeholder="Descripción" class="w-full border rounded px-4 py-2"></textarea>
+        <input type="number" id="edit-product-price" placeholder="Precio*" class="w-full border rounded px-4 py-2" required />
+        <input type="text" id="edit-product-image" placeholder="Imagen (URL)" class="w-full border rounded px-4 py-2" />
+        <select id="edit-product-category" class="w-full border rounded px-4 py-2" required>
+          <option value="libros">Libros</option>
+          <option value="juegos">Juegos</option>
+          <option value="accesorios">Accesorios</option>
+          <option value="materiales">Materiales</option>
+        </select>
+        <input type="number" id="edit-product-stock" placeholder="Stock" class="w-full border rounded px-4 py-2" min="0" />
+      </div>
+      <div id="edit-form-error" class="text-red-600 mt-2 hidden"></div>
+      <div id="edit-form-success" class="text-green-600 mt-2 hidden"></div>
+      <button type="submit" class="w-full mt-4 bg-gradient-to-r from-orange-400 to-lime-400 hover:from-orange-500 hover:to-lime-500 text-white py-3 rounded-lg font-bold text-lg transition-all">Actualizar Producto</button>
+    </form>
+  </div>
+
+  <div class="mt-10">
+    <h2 class="text-2xl font-semibold text-teal-700 mb-4">Productos Subidos</h2>
+    <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      {productos.map(producto => (
+        <div class="bg-white rounded-xl shadow-lg p-5 flex flex-col items-center relative">
+          <img src={producto.image_url || '/logo.svg'} alt={producto.name} class="w-24 h-24 object-contain mb-3 rounded" />
+          <h3 class="font-bold text-lg text-teal-800 mb-1">{producto.name}</h3>
+          <p class="text-gray-500 text-sm mb-2">{producto.description}</p>
+          <span class="text-orange-500 font-bold text-lg mb-1">S/ {producto.price}</span>
+          <span class="text-xs text-gray-400 mb-2">Stock: {producto.stock}</span>
+          <span class="inline-block bg-lime-100 text-lime-700 px-3 py-1 rounded-full text-xs mb-2">{producto.category}</span>
+          <div class="flex gap-2 mt-2">
+            <button class="edit-btn bg-teal-500 hover:bg-teal-600 text-white px-3 py-1 rounded text-xs font-semibold transition-all" data-id={producto.id} data-name={producto.name} data-description={producto.description} data-price={producto.price} data-image={producto.image_url} data-category={producto.category} data-stock={producto.stock}>Editar</button>
+            <button class="delete-btn bg-red-500 hover:bg-red-600 text-white px-3 py-1 rounded text-xs font-semibold transition-all" data-id={producto.id}>Eliminar</button>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</div>
+
+<script>
+// Mostrar email admin
+const admin = JSON.parse(localStorage.getItem('currentUser') || 'null');
+if (admin && admin.email) {
+  document.getElementById('admin-email').textContent = admin.email;
+}
+// Modal agregar
+const openModalBtn = document.getElementById('open-modal-btn');
+const closeModalBtn = document.getElementById('close-modal-btn');
+const modalBg = document.getElementById('modal-bg');
+openModalBtn?.addEventListener('click', () => modalBg.classList.remove('hidden'));
+closeModalBtn?.addEventListener('click', () => modalBg.classList.add('hidden'));
+// Modal editar
+const modalEditBg = document.getElementById('modal-edit-bg');
+const closeEditModalBtn = document.getElementById('close-edit-modal-btn');
+closeEditModalBtn?.addEventListener('click', () => modalEditBg.classList.add('hidden'));
+// Formulario agregar
+const addProductForm = document.getElementById('add-product-form');
+addProductForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  document.getElementById('form-error').classList.add('hidden');
+  document.getElementById('form-success').classList.add('hidden');
+  const name = document.getElementById('product-name').value;
+  const description = document.getElementById('product-description').value;
+  const price = document.getElementById('product-price').value;
+  const image_url = document.getElementById('product-image').value;
+  const category = document.getElementById('product-category').value;
+  const stock = document.getElementById('product-stock').value;
+  if (!name || !price || !category) {
+    document.getElementById('form-error').textContent = 'Completa los campos obligatorios.';
+    document.getElementById('form-error').classList.remove('hidden');
+    return;
+  }
+  const { error } = await window.supabase
+    .from('products')
+    .insert([{ name, description, price: parseFloat(price), image_url, category, stock: stock ? parseInt(stock) : 0 }]);
+  if (error) {
+    document.getElementById('form-error').textContent = 'Error al subir el producto: ' + error.message;
+    document.getElementById('form-error').classList.remove('hidden');
+  } else {
+    document.getElementById('form-success').textContent = '¡Producto subido correctamente!';
+    document.getElementById('form-success').classList.remove('hidden');
+    addProductForm.reset();
+    setTimeout(() => modalBg.classList.add('hidden'), 1200);
+    setTimeout(() => window.location.reload(), 1500);
+  }
+});
+// Botones editar
+Array.from(document.getElementsByClassName('edit-btn')).forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    const id = btn.getAttribute('data-id');
+    document.getElementById('edit-product-id').value = id;
+    document.getElementById('edit-product-name').value = btn.getAttribute('data-name') || '';
+    document.getElementById('edit-product-description').value = btn.getAttribute('data-description') || '';
+    document.getElementById('edit-product-price').value = btn.getAttribute('data-price') || '';
+    document.getElementById('edit-product-image').value = btn.getAttribute('data-image') || '';
+    document.getElementById('edit-product-category').value = btn.getAttribute('data-category') || 'libros';
+    document.getElementById('edit-product-stock').value = btn.getAttribute('data-stock') || '';
+    modalEditBg.classList.remove('hidden');
+  });
+});
+// Formulario editar
+const editProductForm = document.getElementById('edit-product-form');
+editProductForm?.addEventListener('submit', async (e) => {
+  e.preventDefault();
+  document.getElementById('edit-form-error').classList.add('hidden');
+  document.getElementById('edit-form-success').classList.add('hidden');
+  const id = document.getElementById('edit-product-id').value;
+  const name = document.getElementById('edit-product-name').value;
+  const description = document.getElementById('edit-product-description').value;
+  const price = document.getElementById('edit-product-price').value;
+  const image_url = document.getElementById('edit-product-image').value;
+  const category = document.getElementById('edit-product-category').value;
+  const stock = document.getElementById('edit-product-stock').value;
+  if (!id || !name || !price || !category) {
+    document.getElementById('edit-form-error').textContent = 'Completa los campos obligatorios.';
+    document.getElementById('edit-form-error').classList.remove('hidden');
+    return;
+  }
+  const { error } = await window.supabase
+    .from('products')
+    .update({ name, description, price: parseFloat(price), image_url, category, stock: stock ? parseInt(stock) : 0 })
+    .eq('id', id);
+  if (error) {
+    document.getElementById('edit-form-error').textContent = 'Error al actualizar: ' + error.message;
+    document.getElementById('edit-form-error').classList.remove('hidden');
+  } else {
+    document.getElementById('edit-form-success').textContent = '¡Producto actualizado!';
+    document.getElementById('edit-form-success').classList.remove('hidden');
+    setTimeout(() => modalEditBg.classList.add('hidden'), 1200);
+    setTimeout(() => window.location.reload(), 1500);
+  }
+});
+// Botones eliminar
+Array.from(document.getElementsByClassName('delete-btn')).forEach(btn => {
+  btn.addEventListener('click', async (e) => {
+    const id = btn.getAttribute('data-id');
+    if (confirm('¿Seguro que deseas eliminar este producto?')) {
+      const { error } = await window.supabase.from('products').delete().eq('id', id);
+      if (error) {
+        alert('Error al eliminar: ' + error.message);
+      } else {
+        window.location.reload();
+      }
+    }
+  });
+});
+// Exponer supabase en window para el form
+window.supabase = supabase;
+</script>
+
+<style>
+  .modal-enter {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  .modal-enter-active {
+    opacity: 1;
+    transform: scale(1);
+    transition: all 0.2s;
+  }
+</style>
+

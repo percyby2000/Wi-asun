@@ -1,0 +1,601 @@
+---
+// Quechua Biblical Stories Slider Component for Children
+---
+
+<section class="py-8 md:py-16 bg-gradient-to-br from-orange-50 via-amber-50 to-yellow-50 relative overflow-hidden">
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 overflow-hidden">
+    <!-- Floating clouds -->
+    <div class="absolute top-20 left-10 w-24 h-16 bg-white/30 rounded-full blur-xl animate-pulse" style="animation-delay: 0s;"></div>
+    <div class="absolute top-32 right-20 w-32 h-20 bg-white/40 rounded-full blur-xl animate-pulse" style="animation-delay: 1s;"></div>
+    <div class="absolute bottom-32 left-1/4 w-20 h-12 bg-white/25 rounded-full blur-xl animate-pulse" style="animation-delay: 2s;"></div>
+    
+    <!-- Decorative stars -->
+    <div class="absolute top-1/4 right-1/4 w-2 h-2 bg-yellow-300 rounded-full animate-twinkle"></div>
+    <div class="absolute top-1/3 left-1/3 w-1.5 h-1.5 bg-yellow-200 rounded-full animate-twinkle" style="animation-delay: 0.5s;"></div>
+    <div class="absolute bottom-1/4 right-1/3 w-1 h-1 bg-yellow-400 rounded-full animate-twinkle" style="animation-delay: 1s;"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+    <!-- Header Section -->
+    <div class="text-center mb-8 md:mb-12">
+      <h1 class="text-3xl md:text-5xl font-bold text-teal-800 mb-4 md:mb-6">
+        
+      </h1>
+      <p class="text-lg md:text-xl text-teal-700 max-w-2xl mx-auto">
+        Descubre las hermosas historias de la Biblia contadas en quechua, especialmente creadas para que los niños aprendan y se diviertan
+      </p>
+    </div>
+
+    <!-- Slider Container -->
+    <div class="relative max-w-6xl mx-auto">
+      <!-- Slider Track -->
+      <div id="slider-track" class="flex transition-transform duration-500 ease-in-out gap-6 md:gap-8">
+        
+        <!-- Story 1: La Creación -->
+        <div class="story-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3" data-story="creacion">
+          <div class="bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-2 cursor-pointer h-full">
+            <div class="w-full h-48 md:h-64 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl md:rounded-2xl mb-4 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+              <img 
+                src="/public/creacion.svg" 
+                alt="La Creación - Historia Bíblica" 
+                class="w-full h-full object-cover rounded-xl md:rounded-2xl"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <svg class="w-16 md:w-20 h-16 md:h-20 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-teal-800 mb-2 group-hover:text-orange-600 transition-colors">La Creación</h3>
+            <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Diospa Llamk’an - contado en quechua</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs md:text-sm text-orange-600 font-medium">📖 Génesis</span>
+              <div class="flex items-center space-x-1 md:space-x-2">
+                <span class="text-xs text-gray-500">⭐ 4.9</span>
+                <span class="text-xs text-gray-500">👶 3-8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 2: Noé y el Arca -->
+        <div class="story-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3" data-story="noe">
+          <div class="bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-2 cursor-pointer h-full">
+            <div class="w-full h-48 md:h-64 bg-gradient-to-br from-blue-400 to-cyan-600 rounded-xl md:rounded-2xl mb-4 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+              <img 
+                src="/public/elarcadenoe.webp" 
+                alt="Noé y el Arca - Historia Bíblica" 
+                class="w-full h-full object-cover rounded-xl md:rounded-2xl"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <svg class="w-16 md:w-20 h-16 md:h-20 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-teal-800 mb-2 group-hover:text-orange-600 transition-colors">Noé y el Arca</h3>
+            <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Un barco gigante y muchos animales - en quechua</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs md:text-sm text-orange-600 font-medium">📖 Génesis</span>
+              <div class="flex items-center space-x-1 md:space-x-2">
+                <span class="text-xs text-gray-500">⭐ 4.8</span>
+                <span class="text-xs text-gray-500">👶 4-10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 3: Moisés y el Mar -->
+        <div class="story-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3" data-story="moses">
+          <div class="bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-2 cursor-pointer h-full">
+            <div class="w-full h-48 md:h-64 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-xl md:rounded-2xl mb-4 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+              <img 
+                src="/public/moises.webp" 
+                alt="Moisés y el Mar - Historia Bíblica" 
+                class="w-full h-full object-cover rounded-xl md:rounded-2xl"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <svg class="w-16 md:w-20 h-16 md:h-20 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-teal-800 mb-2 group-hover:text-orange-600 transition-colors">Moisés y el Mar</h3>
+            <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">El mar se abre en dos - contado en quechua</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs md:text-sm text-orange-600 font-medium">🏔️ Éxodo</span>
+              <div class="flex items-center space-x-1 md:space-x-2">
+                <span class="text-xs text-gray-500">⭐ 4.7</span>
+                <span class="text-xs text-gray-500">👶 5-12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 4: Daniel y los Leones -->
+        <div class="story-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3" data-story="daniel">
+          <div class="bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-2 cursor-pointer h-full">
+            <div class="w-full h-48 md:h-64 bg-gradient-to-br from-purple-400 to-purple-600 rounded-xl md:rounded-2xl mb-4 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+              <img 
+                src="/public/daniel.webp" 
+                alt="Daniel y los Leones - Historia Bíblica" 
+                class="w-full h-full object-cover rounded-xl md:rounded-2xl"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <svg class="w-16 md:w-20 h-16 md:h-20 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-teal-800 mb-2 group-hover:text-orange-600 transition-colors">Daniel y los Leones</h3>
+            <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Valentía en la cueva de leones - en quechua</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs md:text-sm text-orange-600 font-medium">🦁 Daniel</span>
+              <div class="flex items-center space-x-1 md:space-x-2">
+                <span class="text-xs text-gray-500">⭐ 4.9</span>
+                <span class="text-xs text-gray-500">👶 4-10</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 5: Jonás y la Ballena -->
+        <div class="story-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3" data-story="jonas">
+          <div class="bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-2 cursor-pointer h-full">
+            <div class="w-full h-48 md:h-64 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl md:rounded-2xl mb-4 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+              <img 
+                src="/public/jonas.webp" 
+                alt="Jonás y la Ballena - Historia Bíblica" 
+                class="w-full h-full object-cover rounded-xl md:rounded-2xl"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <svg class="w-16 md:w-20 h-16 md:h-20 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-teal-800 mb-2 group-hover:text-orange-600 transition-colors">Jonás y la Ballena</h3>
+            <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Una aventura bajo el mar - contado en quechua</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs md:text-sm text-orange-600 font-medium">🐋 Jonás</span>
+              <div class="flex items-center space-x-1 md:space-x-2">
+                <span class="text-xs text-gray-500">⭐ 4.6</span>
+                <span class="text-xs text-gray-500">👶 3-9</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 6: El Nacimiento de Jesús -->
+        <div class="story-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3" data-story="nativity">
+          <div class="bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-2 cursor-pointer h-full">
+            <div class="w-full h-48 md:h-64 bg-gradient-to-br from-green-400 to-green-600 rounded-xl md:rounded-2xl mb-4 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+              <img 
+                src="/public/nacimientodejesus.webp" 
+                alt="El Nacimiento de Jesús - Historia Bíblica" 
+                class="w-full h-full object-cover rounded-xl md:rounded-2xl"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <svg class="w-16 md:w-20 h-16 md:h-20 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-teal-800 mb-2 group-hover:text-orange-600 transition-colors">El Nacimiento de Jesús</h3>
+            <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Una noche especial en Belén - en quechua</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs md:text-sm text-orange-600 font-medium">✝️ Jesús</span>
+              <div class="flex items-center space-x-1 md:space-x-2">
+                <span class="text-xs text-gray-500">⭐ 5.0</span>
+                <span class="text-xs text-gray-500">👶 2-8</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Story 7: Los Milagros de Jesús -->
+        <div class="story-slide flex-shrink-0 w-full md:w-1/2 lg:w-1/3" data-story="miracles">
+          <div class="bg-white rounded-2xl md:rounded-3xl p-4 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-2 cursor-pointer h-full">
+            <div class="w-full h-48 md:h-64 bg-gradient-to-br from-pink-400 to-pink-600 rounded-xl md:rounded-2xl mb-4 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+              <img 
+                src="/public/jesustentado.webp" 
+                alt="Jesús tentado - Historia Bíblica" 
+                class="w-full h-full object-cover rounded-xl md:rounded-2xl"
+                onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+              />
+              <svg class="w-16 md:w-20 h-16 md:h-20 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+              </svg>
+            </div>
+            <h3 class="text-lg md:text-xl font-bold text-teal-800 mb-2 group-hover:text-orange-600 transition-colors">Jesús es tentado en el desierto</h3>
+            <p class="text-gray-600 mb-3 md:mb-4 text-sm md:text-base">Jesús estuvo 40 días en el desierto sin comer</p>
+            <div class="flex items-center justify-between">
+              <span class="text-xs md:text-sm text-orange-600 font-medium">✝️ Jesús</span>
+              <div class="flex items-center space-x-1 md:space-x-2">
+                <span class="text-xs text-gray-500">⭐ 4.8</span>
+                <span class="text-xs text-gray-500">👶 4-12</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Navigation Buttons -->
+      <button id="prev-btn" class="absolute left-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white text-teal-700 border-2 border-teal-300 hover:border-teal-400 w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 z-10">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+        </svg>
+      </button>
+
+      <button id="next-btn" class="absolute right-4 top-1/2 transform -translate-y-1/2 bg-white/80 backdrop-blur-sm hover:bg-white text-teal-700 border-2 border-teal-300 hover:border-teal-400 w-12 h-12 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-teal-400 focus:ring-offset-2 z-10">
+        <svg class="w-6 h-6 mx-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+        </svg>
+      </button>
+
+      <!-- Dots Indicator -->
+      <div class="flex justify-center mt-8 space-x-2" id="dots-container">
+        <!-- Dots will be generated by JavaScript -->
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Modal for Story Content -->
+
+<div id="story-modal" class="fixed inset-0 bg-black bg-opacity-50 hidden items-center justify-center z-50 p-2 md:p-6">
+  <div class="bg-white rounded-3xl w-full max-w-5xl h-full max-h-[98vh] flex flex-col overflow-hidden shadow-2xl">
+    <!-- Modal Header -->
+    <div class="bg-gradient-to-r from-orange-400 to-orange-600 text-white p-4 md:p-6 flex justify-between items-center flex-shrink-0">
+      <div>
+        <h2 id="modal-title" class="text-2xl font-bold">Título de la Historia</h2>
+        <p id="modal-subtitle" class="text-orange-100">Subtítulo de la historia</p>
+      </div>
+      <button id="close-modal" class="text-white hover:text-orange-200 transition-colors">
+        <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+        </svg>
+      </button>
+    </div>
+    <!-- Modal Content -->
+    <div class="flex-1 flex flex-col p-2 md:p-6 min-h-0">
+      <div id="story-content" class="w-full h-full min-h-[300px]" style="aspect-ratio: 16/9;">
+        <!-- Canva content will be loaded here -->
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Stories data
+  const storiesData = {
+    'creacion': {
+      title: 'La Creación',
+      subtitle: '📖 Pacha Kawsaypa Willa',
+      canvaUrl: 'https://www.canva.com/design/DAGvaUUp15o/0829mTjMHVnNXO-QX8AHCg/view?embed',
+      content: 'En el principio, Dios creó los cielos y la tierra...',
+      ageRange: '3-8 años',
+      rating: 4.9,
+      language: 'Quechua'
+    },
+    'noe': {
+      title: 'Noé y el Arca',
+      subtitle: '📖 Un barco gigante y muchos animales - en quechua',
+      canvaUrl: 'https://www.canva.com/design/DAGvh4WkJiw/EywxhFbI0X9Bwdu4q24s3w/view?embed',
+      content: 'Dios le dijo a Noé que construyera un barco gigante...',
+      ageRange: '4-10 años',
+      rating: 4.8,
+      language: 'Quechua'
+    },
+    'moses': {
+      title: 'Moisés y el Mar',
+      subtitle: '🏔️ El mar se abre en dos - contado en quechua',
+      canvaUrl: 'https://www.youtube.com/embed/t1RdNNCBnKQ?si=o5HmXiIgLwIlHYdz',
+      content: 'Moisés levantó su vara y el mar se abrió...',
+      ageRange: '5-12 años',
+      rating: 4.7,
+      language: 'Quechua'
+    },
+    'daniel': {
+      title: 'Daniel y los Leones',
+      subtitle: '🦁 Valentía en la cueva de leones - en quechua',
+      canvaUrl: 'https://www.youtube.com/embed/PuAtcTCUCXc?si=4onpicePr04ubWlC',
+      content: 'Daniel oraba tres veces al día...',
+      ageRange: '4-10 años',
+      rating: 4.9,
+      language: 'Quechua'
+    },
+    'jonas': {
+      title: 'Jonás y la Ballena',
+      subtitle: '🐋 Una aventura bajo el mar - contado en quechua',
+      canvaUrl: 'https://www.youtube.com/embed/MtZ5rIVGjZY?si=9bo7eY8jkepzAfWE',
+      content: 'Jonás se negó a ir a Nínive...',
+      ageRange: '3-9 años',
+      rating: 4.6,
+      language: 'Quechua'
+    },
+    'nativity': {
+      title: 'El Nacimiento de Jesús',
+      subtitle: '✝️ Una noche especial en Belén - en quechua',
+      canvaUrl: 'https://www.youtube.com/embed/DIlCaP3Y0iQ?si=xXbGAepHDyfNC8RI',
+      content: 'En Belén nació un niño especial...',
+      ageRange: '2-8 años',
+      rating: 5.0,
+      language: 'Quechua'
+    },
+    'miracles': {
+      title: 'Jesús es tentado en el desierto',
+      subtitle: '✝️estuvo 40 días en el desierto sin comer',
+      canvaUrl: 'https://www.youtube.com/embed/i3K-85Hz664?si=FSgvn8-xtjQP7HA7',
+      content: ' El diablo lo tentó para que desobedeciera a Dios, pero Jesús usó la Palabra de Dios y no cayó en la tentación',
+      ageRange: '4-12 años',
+      rating: 4.8,
+      language: 'Quechua'
+    }
+  };
+
+  // Slider functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    const sliderTrack = document.getElementById('slider-track');
+    const prevBtn = document.getElementById('prev-btn');
+    const nextBtn = document.getElementById('next-btn');
+    const dotsContainer = document.getElementById('dots-container');
+    const storySlides = document.querySelectorAll('.story-slide');
+    const modal = document.getElementById('story-modal');
+    const closeModal = document.getElementById('close-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalSubtitle = document.getElementById('modal-subtitle');
+    const storyContent = document.getElementById('story-content');
+
+    if (!sliderTrack || !dotsContainer) return;
+
+    let currentSlide = 0;
+    const totalSlides = storySlides.length;
+    const slidesPerView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+
+    // Generate dots
+    function generateDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      for (let i = 0; i < totalSlides; i++) {
+        const dot = document.createElement('button');
+        dot.className = `w-3 h-3 rounded-full transition-all duration-300 ${i === 0 ? 'bg-orange-500' : 'bg-orange-300'}`;
+        dot.addEventListener('click', () => goToSlide(i));
+        dotsContainer.appendChild(dot);
+      }
+    }
+
+    // Update dots
+    function updateDots() {
+      if (!dotsContainer) return;
+      const dots = dotsContainer.querySelectorAll('button');
+      dots.forEach((dot, index) => {
+        dot.className = `w-3 h-3 rounded-full transition-all duration-300 ${index === currentSlide ? 'bg-orange-500' : 'bg-orange-300'}`;
+      });
+    }
+
+    // Go to specific slide
+    function goToSlide(slideIndex: number) {
+      if (!sliderTrack) return;
+      currentSlide = slideIndex;
+      const translateX = -currentSlide * (100 / slidesPerView);
+      sliderTrack.style.transform = `translateX(${translateX}%)`;
+      updateDots();
+    }
+
+    // Next slide
+    function nextSlide() {
+      currentSlide = (currentSlide + 1) % totalSlides;
+      goToSlide(currentSlide);
+    }
+
+    // Previous slide
+    function prevSlide() {
+      currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+      goToSlide(currentSlide);
+    }
+
+    // Event listeners for navigation
+    if (prevBtn) prevBtn.addEventListener('click', prevSlide);
+    if (nextBtn) nextBtn.addEventListener('click', nextSlide);
+
+    // Auto-play slider
+    let autoPlayInterval = setInterval(nextSlide, 5000);
+
+    // Pause auto-play on hover
+    if (sliderTrack) {
+      sliderTrack.addEventListener('mouseenter', () => {
+        clearInterval(autoPlayInterval);
+      });
+
+      sliderTrack.addEventListener('mouseleave', () => {
+        autoPlayInterval = setInterval(nextSlide, 5000);
+      });
+    }
+
+    // Initialize dots
+    generateDots();
+
+    // Story modal functionality
+    storySlides.forEach(slide => {
+      slide.addEventListener('click', function(this: HTMLElement) {
+        const storyId = this.getAttribute('data-story');
+        const story = storiesData[storyId as keyof typeof storiesData];
+        
+        if (story && modal && modalTitle && modalSubtitle && storyContent) {
+          // Update modal content
+          modalTitle.textContent = story.title;
+          modalSubtitle.textContent = story.subtitle;
+          
+          // Create iframe for Canva content
+          storyContent.innerHTML = `
+            <iframe 
+              src="${story.canvaUrl}"
+              width="100%"
+              height="100%"
+              style="border: none; border-radius: 1rem; min-height: 300px; aspect-ratio: 16/9; display: block; background: #f8fafc;"
+              allow="fullscreen"
+              allowfullscreen
+              loading="lazy"
+            ></iframe>
+          `;
+          
+          // Show modal
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    // Close modal
+    if (closeModal) {
+      closeModal.addEventListener('click', function() {
+        if (modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = 'auto';
+          // Clear iframe content
+          if (storyContent) {
+            storyContent.innerHTML = '';
+          }
+        }
+      });
+    }
+
+    // Close modal on outside click
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = 'auto';
+          // Clear iframe content
+          if (storyContent) {
+            storyContent.innerHTML = '';
+          }
+        }
+      });
+    }
+
+    // Close modal on Escape key
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+        // Clear iframe content
+        if (storyContent) {
+          storyContent.innerHTML = '';
+        }
+      }
+    });
+
+    // Responsive handling
+    window.addEventListener('resize', function() {
+      const newSlidesPerView = window.innerWidth >= 1024 ? 3 : window.innerWidth >= 768 ? 2 : 1;
+      if (newSlidesPerView !== slidesPerView) {
+        location.reload(); // Simple solution for responsive changes
+      }
+    });
+  });
+</script>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes twinkle {
+    0%, 100% { opacity: 0.3; transform: scale(1); }
+    50% { opacity: 1; transform: scale(1.2); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+  
+  .animate-slide-up-delay {
+    animation: slide-up 0.8s ease-out 0.2s both;
+  }
+
+  .animate-twinkle {
+    animation: twinkle 2s ease-in-out infinite;
+  }
+
+  .story-slide {
+    transition: all 0.3s ease;
+  }
+
+  .story-slide:hover {
+    transform: translateY(-8px);
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .story-slide {
+      margin-bottom: 1rem;
+    }
+    #story-modal .bg-white {
+      margin: 0.25rem;
+      max-height: calc(100vh - 0.5rem);
+      height: 98vh;
+    }
+    .book-container {
+      padding: 1rem;
+    }
+    .container {
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    h1 {
+      font-size: 2rem !important;
+      line-height: 1.2;
+    }
+    .grid {
+      gap: 1rem !important;
+    }
+    .story-slide .bg-white {
+      padding: 1rem !important;
+    }
+    #story-content {
+      min-height: 200px;
+      aspect-ratio: 16/9;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .story-slide {
+      margin-bottom: 0.5rem;
+    }
+    .container {
+      padding-left: 0.75rem;
+      padding-right: 0.75rem;
+    }
+    h1 {
+      font-size: 1.5rem !important;
+    }
+    .story-slide h3 {
+      font-size: 1rem !important;
+    }
+    .story-slide p {
+      font-size: 0.875rem !important;
+    }
+    .story-slide .bg-white {
+      padding: 0.75rem !important;
+    }
+    .story-slide {
+      min-height: 44px;
+    }
+    #story-content {
+      min-height: 120px;
+      aspect-ratio: 16/9;
+    }
+  }
+</style>

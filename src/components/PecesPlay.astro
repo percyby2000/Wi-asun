@@ -1,0 +1,350 @@
+---
+// Fishing game component
+---
+
+<div class="fishing-game bg-gradient-to-b from-blue-400 to-blue-600 min-h-[500px] rounded-xl p-6 relative overflow-hidden">
+  <!-- Game Header -->
+  <div class="text-center mb-6">
+    <h2 class="text-3xl font-bold text-white mb-2">🐟 Pesca Milagrosa</h2>
+    <p class="text-blue-100 text-lg">Ayuda a Pedro a pescar como Jesús le enseñó</p>
+  </div>
+
+  <!-- Game Stats -->
+  <div class="flex justify-between items-center mb-6 bg-white bg-opacity-20 rounded-lg p-4 text-white">
+    <div class="text-center">
+      <div class="text-2xl font-bold" id="score">0</div>
+      <div class="text-sm">Peces Atrapados</div>
+    </div>
+    <div class="text-center">
+      <div class="text-2xl font-bold" id="time">60</div>
+      <div class="text-sm">Segundos</div>
+    </div>
+    <div class="text-center">
+      <div class="text-2xl font-bold" id="level">1</div>
+      <div class="text-sm">Nivel</div>
+    </div>
+  </div>
+
+  <!-- Game Area -->
+  <div id="gameArea" class="relative bg-gradient-to-b from-blue-300 to-blue-500 rounded-lg h-80 overflow-hidden cursor-crosshair">
+    <!-- Water surface effect -->
+    <div class="absolute top-0 left-0 right-0 h-2 bg-blue-200 opacity-30 animate-pulse"></div>
+    
+    <!-- Fish container -->
+    <div id="fishContainer" class="relative w-full h-full">
+      <!-- Fish will be generated here -->
+    </div>
+
+    <!-- Fishing net -->
+    <div id="fishingNet" class="absolute w-16 h-16 pointer-events-none opacity-0 transition-opacity duration-200">
+      <div class="w-full h-full border-4 border-white rounded-full animate-ping"></div>
+    </div>
+
+    <!-- Biblical message -->
+    <div id="biblicalMessage" class="absolute bottom-4 left-4 right-4 bg-white bg-opacity-90 rounded-lg p-3 text-center text-gray-800 font-semibold hidden">
+      <p class="text-sm">"Echad vuestra red a la derecha de la barca y hallaréis" - Juan 21:6</p>
+    </div>
+  </div>
+
+  <!-- Game Controls -->
+  <div class="flex justify-center gap-4 mt-6">
+    <button id="startGame" class="bg-green-500 hover:bg-green-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors">
+      🎮 Iniciar Juego
+    </button>
+    <button id="pauseGame" class="bg-yellow-500 hover:bg-yellow-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors hidden">
+      ⏸️ Pausar
+    </button>
+    <button id="restartGame" class="bg-red-500 hover:bg-red-600 text-white px-8 py-3 rounded-lg font-semibold transition-colors hidden">
+      🔄 Reiniciar
+    </button>
+  </div>
+
+
+  <!-- Game Over Modal -->
+  <div id="gameOverModal" class="fixed inset-0 bg-black bg-opacity-50 z-50 hidden flex items-center justify-center p-4">
+    <div class="bg-white rounded-2xl p-8 max-w-md w-full text-center">
+      <div class="text-6xl mb-4">🎣</div>
+      <h3 class="text-2xl font-bold text-gray-800 mb-4">¡Juego Terminado!</h3>
+      <div class="text-4xl font-bold text-blue-600 mb-4" id="finalScore">0</div>
+      <p class="text-gray-600 mb-6">Peces atrapados</p>
+      <div class="flex gap-4 justify-center">
+        <button id="playAgain" class="bg-blue-500 hover:bg-blue-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+          Jugar de Nuevo
+        </button>
+        <button id="closeGameOver" class="bg-gray-500 hover:bg-gray-600 text-white px-6 py-2 rounded-lg font-semibold transition-colors">
+          Cerrar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Game state
+  let gameState = {
+    score: 0,
+    time: 60,
+    level: 1,
+    isPlaying: false,
+    isPaused: false,
+    gameInterval: null as ReturnType<typeof setInterval> | null,
+    fishInterval: null as ReturnType<typeof setInterval> | null,
+    timeInterval: null as ReturnType<typeof setInterval> | null
+  };
+
+  // Fish types with different point values
+  const fishTypes = [
+    { emoji: '🐟', points: 1, speed: 2, rarity: 0.6 },
+    { emoji: '🐠', points: 2, speed: 3, rarity: 0.3 },
+    { emoji: '🐡', points: 3, speed: 4, rarity: 0.1 }
+  ];
+
+  // DOM elements
+  const gameArea = document.getElementById('gameArea') as HTMLElement;
+  const fishContainer = document.getElementById('fishContainer') as HTMLElement;
+  const fishingNet = document.getElementById('fishingNet') as HTMLElement;
+  const biblicalMessage = document.getElementById('biblicalMessage') as HTMLElement;
+  const scoreElement = document.getElementById('score') as HTMLElement;
+  const timeElement = document.getElementById('time') as HTMLElement;
+  const levelElement = document.getElementById('level') as HTMLElement;
+  const startButton = document.getElementById('startGame') as HTMLElement;
+  const pauseButton = document.getElementById('pauseGame') as HTMLElement;
+  const restartButton = document.getElementById('restartGame') as HTMLElement;
+  const gameOverModal = document.getElementById('gameOverModal') as HTMLElement;
+  const finalScoreElement = document.getElementById('finalScore') as HTMLElement;
+  const playAgainButton = document.getElementById('playAgain') as HTMLElement;
+  const closeGameOverButton = document.getElementById('closeGameOver') as HTMLElement;
+
+  // Initialize game
+  function initGame() {
+    if (!gameArea || !fishContainer) return;
+    
+    // Clear any existing fish
+    fishContainer.innerHTML = '';
+    
+    // Reset game state
+    gameState = {
+      score: 0,
+      time: 60,
+      level: 1,
+      isPlaying: false,
+      isPaused: false,
+      gameInterval: null,
+      fishInterval: null,
+      timeInterval: null
+    };
+    
+    updateDisplay();
+    showBiblicalMessage();
+  }
+
+  // Update display
+  function updateDisplay() {
+    if (scoreElement) scoreElement.textContent = gameState.score.toString();
+    if (timeElement) timeElement.textContent = gameState.time.toString();
+    if (levelElement) levelElement.textContent = gameState.level.toString();
+  }
+
+  // Show biblical message
+  function showBiblicalMessage() {
+    if (!biblicalMessage) return;
+    
+    biblicalMessage.classList.remove('hidden');
+    setTimeout(() => {
+      biblicalMessage.classList.add('hidden');
+    }, 3000);
+  }
+
+  // Create fish
+  function createFish() {
+    if (!fishContainer || !gameState.isPlaying || gameState.isPaused) return;
+
+    const fishType = fishTypes[Math.floor(Math.random() * fishTypes.length)];
+    const fish = document.createElement('div');
+    fish.className = 'fish absolute text-4xl cursor-pointer select-none transition-transform duration-200 hover:scale-110';
+    fish.textContent = fishType.emoji;
+    fish.style.left = '-50px';
+    fish.style.top = Math.random() * (gameArea.offsetHeight - 50) + 'px';
+    fish.style.zIndex = '10';
+    
+    // Store fish data
+    (fish as any).fishData = fishType;
+    
+    fishContainer.appendChild(fish);
+    
+    // Animate fish movement
+    const duration = (10000 - fishType.speed * 1000) / gameState.level;
+    fish.style.transition = `left ${duration}ms linear`;
+    
+    setTimeout(() => {
+      fish.style.left = gameArea.offsetWidth + 'px';
+    }, 100);
+    
+    // Remove fish after animation
+    setTimeout(() => {
+      if (fish.parentNode) {
+        fish.parentNode.removeChild(fish);
+      }
+    }, duration + 100);
+    
+    // Add click event
+    fish.addEventListener('click', catchFish);
+  }
+
+  // Catch fish
+  function catchFish(this: HTMLElement) {
+    if (!gameState.isPlaying || gameState.isPaused) return;
+    
+    const fishData = (this as any).fishData;
+    gameState.score += fishData.points;
+    
+    // Show fishing net effect
+    showFishingNet(this.offsetLeft, this.offsetTop);
+    
+    // Remove fish
+    this.remove();
+    
+    // Update display
+    updateDisplay();
+    
+    // Level up every 10 points
+    if (gameState.score % 10 === 0) {
+      gameState.level++;
+      showBiblicalMessage();
+    }
+  }
+
+  // Show fishing net effect
+  function showFishingNet(x: number, y: number) {
+    if (!fishingNet) return;
+    
+    fishingNet.style.left = (x - 32) + 'px';
+    fishingNet.style.top = (y - 32) + 'px';
+    fishingNet.style.opacity = '1';
+    
+    setTimeout(() => {
+      fishingNet.style.opacity = '0';
+    }, 500);
+  }
+
+  // Start game
+  function startGame() {
+    if (!gameArea) return;
+    
+    gameState.isPlaying = true;
+    gameState.isPaused = false;
+    
+    startButton.classList.add('hidden');
+    pauseButton.classList.remove('hidden');
+    restartButton.classList.remove('hidden');
+    
+    // Start fish spawning
+    gameState.fishInterval = setInterval(createFish, 1000 / gameState.level);
+    
+    // Start timer
+    gameState.timeInterval = setInterval(() => {
+      if (!gameState.isPaused) {
+        gameState.time--;
+        updateDisplay();
+        
+        if (gameState.time <= 0) {
+          endGame();
+        }
+      }
+    }, 1000);
+  }
+
+  // Pause game
+  function pauseGame() {
+    gameState.isPaused = !gameState.isPaused;
+    
+    if (gameState.isPaused) {
+      pauseButton.textContent = '▶️ Continuar';
+    } else {
+      pauseButton.textContent = '⏸️ Pausar';
+    }
+  }
+
+  // End game
+  function endGame() {
+    gameState.isPlaying = false;
+    
+    // Clear intervals
+    if (gameState.fishInterval) clearInterval(gameState.fishInterval);
+    if (gameState.timeInterval) clearInterval(gameState.timeInterval);
+    
+    // Clear fish
+    if (fishContainer) fishContainer.innerHTML = '';
+    
+    // Show game over modal
+    if (finalScoreElement) finalScoreElement.textContent = gameState.score.toString();
+    if (gameOverModal) gameOverModal.classList.remove('hidden');
+  }
+
+  // Restart game
+  function restartGame() {
+    initGame();
+    startGame();
+  }
+
+  // Close game over modal
+  function closeGameOver() {
+    if (gameOverModal) gameOverModal.classList.add('hidden');
+    
+    // Reset UI
+    startButton.classList.remove('hidden');
+    pauseButton.classList.add('hidden');
+    restartButton.classList.add('hidden');
+    pauseButton.textContent = '⏸️ Pausar';
+  }
+
+  // Event listeners
+  startButton?.addEventListener('click', startGame);
+  pauseButton?.addEventListener('click', pauseGame);
+  restartButton?.addEventListener('click', restartGame);
+  playAgainButton?.addEventListener('click', () => {
+    closeGameOver();
+    restartGame();
+  });
+  closeGameOverButton?.addEventListener('click', closeGameOver);
+
+  // Initialize game on load
+  initGame();
+</script>
+
+<style>
+  .fish {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+  }
+  
+  .fishing-game {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  @media (max-width: 768px) {
+    .fishing-game {
+      padding: 1rem;
+    }
+    
+    #gameArea {
+      height: 60vh;
+    }
+    
+    .fish {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .fishing-game h2 {
+      font-size: 1.5rem;
+    }
+    
+    #gameArea {
+      height: 50vh;
+    }
+  }
+</style>

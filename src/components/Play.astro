@@ -1,0 +1,1632 @@
+---
+import PecesPlay from './PecesPlay.astro';
+---
+
+<div class="min-h-screen bg-gradient-to-br from-blue-50 via-indigo-50 to-purple-50 py-8 md:py-12 px-4 md:px-6">
+  <!-- Enhanced Background decorative elements -->
+  <div class="absolute inset-0 overflow-hidden pointer-events-none">
+    <div class="absolute top-20 left-10 w-12 h-12 md:w-16 md:h-16 bg-gradient-to-br from-blue-300 to-cyan-300 rounded-full opacity-30 animate-pulse"></div>
+    <div class="absolute top-40 right-20 w-8 h-8 md:w-12 md:h-12 bg-gradient-to-br from-indigo-300 to-purple-300 rounded-full opacity-40 animate-pulse delay-1000"></div>
+    <div class="absolute bottom-32 left-1/4 w-16 h-16 md:w-20 md:h-20 bg-gradient-to-br from-purple-300 to-pink-300 rounded-full opacity-35 animate-pulse delay-500"></div>
+    <div class="absolute top-1/2 right-1/3 w-10 h-10 md:w-14 md:h-14 bg-gradient-to-br from-cyan-300 to-blue-300 rounded-full opacity-30 animate-pulse delay-1500"></div>
+    <div class="absolute top-1/3 left-1/3 w-8 h-8 md:w-10 md:h-10 bg-gradient-to-br from-yellow-300 to-orange-300 rounded-full opacity-25 animate-pulse delay-2000"></div>
+  </div>
+
+  <div class="max-w-6xl mx-auto relative z-10">
+    <!-- Enhanced Header -->
+    <div class="text-center mb-8 md:mb-12">
+      <h1 class="text-3xl md:text-5xl lg:text-6xl font-bold bg-gradient-to-r from-blue-600 via-purple-600 to-indigo-600 bg-clip-text text-transparent mb-3 md:mb-4 drop-shadow-lg leading-tight">
+        🎮 Juegos Bíblicos para Niños
+      </h1>
+      <p class="text-lg md:text-xl lg:text-2xl text-gray-700 max-w-3xl mx-auto font-medium px-4 leading-relaxed">
+        Diviértete aprendiendo las historias de la Biblia con estos juegos interactivos y coloridos
+      </p>
+    </div>
+
+    <!-- Enhanced Games Grid -->
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-6 mb-8">
+      <!-- Juego de Pesca -->
+      <div class="game-card group bg-gradient-to-br from-white to-blue-50 rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 md:hover:-translate-y-3 cursor-pointer border-2 border-blue-100 hover:border-blue-300" data-game="pesca">
+        <div class="p-4 md:p-6 lg:p-8">
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl lg:text-7xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">🐟</div>
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 md:mb-3 leading-tight">Pesca Milagrosa</h3>
+            <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg leading-relaxed">Ayuda a Pedro a pescar como Jesús le enseñó</p>
+            <div class="bg-gradient-to-r from-blue-500 to-cyan-500 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg font-bold shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+              🎮 Jugar Ahora
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Juego de Arca de Noé -->
+      <div class="game-card group bg-gradient-to-br from-white to-green-50 rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 md:hover:-translate-y-3 cursor-pointer border-2 border-green-100 hover:border-green-300" data-game="arca">
+        <div class="p-4 md:p-6 lg:p-8">
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl lg:text-7xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">🚢</div>
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 md:mb-3 leading-tight">Arca de Noé</h3>
+            <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg leading-relaxed">Ayuda a Noé a organizar los animales en el arca</p>
+            <div class="bg-gradient-to-r from-green-500 to-emerald-500 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg font-bold shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+              🎮 Jugar Ahora
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Juego de David y Goliat -->
+      <div class="game-card group bg-gradient-to-br from-white to-orange-50 rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 md:hover:-translate-y-3 cursor-pointer border-2 border-orange-100 hover:border-orange-300" data-game="david">
+        <div class="p-4 md:p-6 lg:p-8">
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl lg:text-7xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">⚔️</div>
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 md:mb-3 leading-tight">David vs Goliat</h3>
+            <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg leading-relaxed">Ayuda a David a vencer al gigante Goliat</p>
+            <div class="bg-gradient-to-r from-orange-500 to-red-500 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg font-bold shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+              🎮 Jugar Ahora
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Juego de Moisés -->
+      <div class="game-card group bg-gradient-to-br from-white to-blue-50 rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 md:hover:-translate-y-3 cursor-pointer border-2 border-blue-100 hover:border-blue-300" data-game="moses">
+        <div class="p-4 md:p-6 lg:p-8">
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl lg:text-7xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">🌊</div>
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 md:mb-3 leading-tight">Moisés y el Mar Rojo</h3>
+            <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg leading-relaxed">Guía al pueblo de Israel a través del mar</p>
+            <div class="bg-gradient-to-r from-blue-600 to-indigo-600 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg font-bold shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+              🎮 Jugar Ahora
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Juego de Daniel -->
+      <div class="game-card group bg-gradient-to-br from-white to-yellow-50 rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 md:hover:-translate-y-3 cursor-pointer border-2 border-yellow-100 hover:border-yellow-300" data-game="daniel">
+        <div class="p-4 md:p-6 lg:p-8">
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl lg:text-7xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">🦁</div>
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 md:mb-3 leading-tight">Daniel en el Foso</h3>
+            <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg leading-relaxed">Ayuda a Daniel a sobrevivir entre los leones</p>
+            <div class="bg-gradient-to-r from-yellow-500 to-orange-500 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg font-bold shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+              🎮 Jugar Ahora
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Juego de Josué -->
+      <div class="game-card group bg-gradient-to-br from-white to-purple-50 rounded-2xl md:rounded-3xl shadow-lg md:shadow-xl hover:shadow-2xl transition-all duration-500 transform hover:-translate-y-2 md:hover:-translate-y-3 cursor-pointer border-2 border-purple-100 hover:border-purple-300" data-game="josue">
+        <div class="p-4 md:p-6 lg:p-8">
+          <div class="text-center">
+            <div class="text-5xl md:text-6xl lg:text-7xl mb-3 md:mb-4 group-hover:scale-110 transition-transform duration-300">🏰</div>
+            <h3 class="text-xl md:text-2xl lg:text-3xl font-bold text-gray-800 mb-2 md:mb-3 leading-tight">Josué y Jericó</h3>
+            <p class="text-gray-600 mb-4 md:mb-6 text-sm md:text-lg leading-relaxed">Ayuda a Josué a derribar las murallas</p>
+            <div class="bg-gradient-to-r from-purple-500 to-pink-500 text-white px-6 md:px-8 py-2 md:py-3 rounded-full text-base md:text-lg font-bold shadow-lg group-hover:shadow-xl transition-all duration-300 transform group-hover:scale-105">
+              🎮 Jugar Ahora
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Enhanced Instructions -->
+    <div class="text-center">
+      <p class="text-gray-700 text-base md:text-lg lg:text-xl font-medium bg-white/50 backdrop-blur-sm rounded-xl md:rounded-2xl p-3 md:p-4 shadow-lg mx-4">
+        ✨ Haz clic en cualquier juego para comenzar a jugar y aprender sobre las historias bíblicas ✨
+      </p>
+    </div>
+  </div>
+</div>
+
+<!-- Game Modal -->
+<div id="gameModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-2 md:p-4">
+  <div class="bg-white rounded-2xl max-w-4xl w-full max-h-[95vh] md:max-h-[90vh] overflow-hidden shadow-2xl">
+    <!-- Modal Header -->
+    <div class="flex justify-between items-center p-3 md:p-6 border-b border-gray-200">
+      <h2 id="gameTitle" class="text-lg md:text-2xl font-bold text-gray-800">Juego</h2>
+      <button id="closeGameModal" class="text-gray-500 hover:text-gray-700 text-2xl md:text-3xl font-bold w-8 h-8 md:w-10 md:h-10 flex items-center justify-center rounded-full hover:bg-gray-100 transition-colors">
+        ×
+      </button>
+    </div>
+    
+    <!-- Modal Content -->
+    <div id="gameContent" class="p-2 md:p-6 overflow-auto max-h-[calc(95vh-80px)] md:max-h-[calc(90vh-120px)]">
+      <!-- Game content will be loaded here -->
+    </div>
+  </div>
+</div>
+
+<script>
+  // Game data
+  const games = {
+    pesca: {
+      title: "Pesca Milagrosa",
+      component: "PecesPlay"
+    },
+    arca: {
+      title: "Arca de Noé",
+      component: "ArcaPlay"
+    },
+    david: {
+      title: "David vs Goliat",
+      component: "DavidPlay"
+    },
+    moses: {
+      title: "Moisés y el Mar Rojo",
+      component: "MosesPlay"
+    },
+    daniel: {
+      title: "Daniel en el Foso",
+      component: "DanielPlay"
+    },
+    josue: {
+      title: "Josué y Jericó",
+      component: "JosuePlay"
+    }
+  };
+
+  // Modal elements
+  const gameModal = document.getElementById('gameModal') as HTMLElement;
+  const gameTitle = document.getElementById('gameTitle') as HTMLElement;
+  const gameContent = document.getElementById('gameContent') as HTMLElement;
+  const closeGameModal = document.getElementById('closeGameModal') as HTMLElement;
+
+  // Game cards
+  const gameCards = document.querySelectorAll('.game-card');
+
+  // Open game modal
+  function openGame(gameType: string) {
+    const game = games[gameType as keyof typeof games];
+    if (!game) return;
+
+    // Load specific game content
+    if (gameType === 'pesca') {
+      // Load the fishing game in full screen
+      loadFishingGameFullScreen();
+    } else {
+      // Show placeholder for other games in modal
+      gameTitle.textContent = game.title;
+      gameContent.innerHTML = `
+        <div class="text-center py-12">
+          <div class="text-6xl mb-4 animate-bounce">🎮</div>
+          <h3 class="text-2xl font-bold text-gray-800 mb-4">${game.title}</h3>
+          <p class="text-gray-600 mb-6">Este juego está en desarrollo. Pronto podrás jugar aquí.</p>
+          <div class="bg-gradient-to-r from-blue-500 to-purple-500 text-white px-8 py-3 rounded-full text-lg font-semibold inline-block">
+            ¡Próximamente!
+          </div>
+        </div>
+      `;
+      gameModal.classList.remove('hidden');
+      document.body.style.overflow = 'hidden';
+    }
+  }
+
+  // Load fishing game in full screen
+  function loadFishingGameFullScreen() {
+    // Hide the main content
+    const mainContent = document.querySelector('.min-h-screen');
+    if (mainContent) {
+      mainContent.classList.add('hidden');
+    }
+
+    // Create full screen game container
+    const fullScreenGame = document.createElement('div');
+    fullScreenGame.id = 'fullScreenGame';
+    fullScreenGame.className = 'fixed inset-0 z-50 bg-gradient-to-br from-blue-900 via-purple-900 to-indigo-900';
+    fullScreenGame.innerHTML = `
+      <!-- Enhanced Close Button -->
+      <button id="closeFullScreenGame" class="absolute top-4 right-4 z-50 bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white text-3xl font-bold w-16 h-16 flex items-center justify-center rounded-full transition-all duration-300 shadow-2xl hover:scale-110 border-4 border-white/40 backdrop-blur-sm">
+        ×
+      </button>
+
+      <!-- Enhanced Welcome Screen -->
+      <div id="welcomeScreen" class="w-full h-full flex items-center justify-center p-2 md:p-4">
+        <div class="bg-gradient-to-br from-white/15 to-white/5 backdrop-blur-xl rounded-2xl md:rounded-3xl p-4 md:p-8 lg:p-12 max-w-sm md:max-w-lg w-full shadow-2xl border border-white/30 mx-2">
+          <!-- Enhanced Welcome Header -->
+          <div class="text-center mb-6 md:mb-8">
+            <div class="text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6 animate-bounce">🐟</div>
+            <h1 class="text-2xl md:text-2xl lg:text-5xl font-bold text-white mb-2 md:mb-3 drop-shadow-lg bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent leading-tight">Pesca Milagrosa</h1>
+            <p class="text-blue-100 text-lg md:text-xl lg:text-2xl drop-shadow-md font-medium">¡Prepárate para la aventura!</p>
+          </div>
+
+          <!-- Enhanced Player Form -->
+          <form id="playerForm" class="space-y-6 md:space-y-8">
+            <!-- Enhanced Player Name -->
+            <div>
+              <label for="playerName" class="block text-white font-bold mb-2 md:mb-3 text-lg md:text-xl">¿Cómo te llamas?</label>
+              <input 
+                type="text" 
+                id="playerName" 
+                name="playerName" 
+                placeholder="Tu nombre o apodo" 
+                class="w-full px-4 md:px-6 py-3 md:py-4 rounded-xl md:rounded-2xl bg-gradient-to-r from-white/25 to-white/15 border-2 md:border-3 border-white/40 text-white placeholder-white/70 focus:outline-none focus:border-yellow-400 focus:ring-2 md:focus:ring-4 focus:ring-yellow-400/30 transition-all duration-300 text-lg md:text-xl font-medium shadow-lg"
+                required
+              >
+            </div>
+
+            <button type="submit" class="w-full bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl font-bold transition-all duration-300 shadow-xl text-lg md:text-xl lg:text-2xl transform hover:scale-105 border-2 border-white/30">
+              🎮 ¡Comenzar Aventura!
+            </button>
+          </form>
+
+          
+        </div>
+      </div>
+
+      <!-- Enhanced Game Container (Hidden initially) -->
+      <div id="gameContainer" class="fishing-game-fullscreen w-full h-full flex flex-col p-2 md:p-3 lg:p-6 relative overflow-hidden hidden">
+        <!-- Enhanced Player Info Header -->
+        <div class="flex flex-col md:flex-row md:items-center md:justify-between mb-4 md:mb-6 px-2 md:px-3 space-y-2 md:space-y-0">
+          <div class="flex items-center space-x-3 md:space-x-4">
+            <div id="playerAvatar" class="text-3xl md:text-4xl lg:text-5xl drop-shadow-lg"></div>
+            <div>
+              <h3 id="playerNameDisplay" class="text-white font-bold text-lg md:text-xl lg:text-2xl drop-shadow-lg"></h3>
+              <p class="text-blue-100 text-sm md:text-base font-medium">¡A pescar!</p>
+            </div>
+          </div>
+          <div class="text-center md:text-right">
+            <h2 class="text-2xl md:text-3xl lg:text-4xl font-bold bg-gradient-to-r from-yellow-300 to-orange-300 bg-clip-text text-transparent drop-shadow-lg">🐟 Pesca Milagrosa</h2>
+          </div>
+        </div>
+
+        <!-- Enhanced Game Stats -->
+        <div class="flex justify-between items-center mb-4 md:mb-6 bg-gradient-to-r from-blue-800/90 to-purple-800/90 backdrop-blur-xl rounded-2xl md:rounded-3xl p-3 md:p-6 mx-2 md:mx-3 border-2 md:border-3 border-white/30 shadow-2xl">
+          <div class="text-center">
+            <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-300 drop-shadow-lg" id="score">0</div>
+            <div class="text-blue-100 font-bold text-sm md:text-lg">Peces</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-300 drop-shadow-lg" id="time">60</div>
+            <div class="text-blue-100 font-bold text-sm md:text-lg">Segundos</div>
+          </div>
+          <div class="text-center">
+            <div class="text-2xl md:text-3xl lg:text-4xl font-bold text-yellow-300 drop-shadow-lg" id="level">1</div>
+            <div class="text-blue-100 font-bold text-sm md:text-lg">Nivel</div>
+          </div>
+        </div>
+
+        <!-- Enhanced Game Area -->
+        <div id="gameArea" class="relative bg-gradient-to-b from-cyan-400 via-blue-500 to-indigo-600 rounded-2xl md:rounded-3xl flex-1 overflow-hidden cursor-crosshair mx-2 md:mx-3 border-2 md:border-4 border-white/40 shadow-2xl min-h-0">
+          <!-- Enhanced animated background elements -->
+          <div class="absolute inset-0 overflow-hidden">
+            <div class="absolute top-10 left-10 w-16 h-16 md:w-24 md:h-24 bg-gradient-to-br from-white/20 to-white/5 rounded-full animate-pulse"></div>
+            <div class="absolute top-20 right-20 w-12 h-12 md:w-20 md:h-20 bg-gradient-to-br from-white/15 to-white/5 rounded-full animate-pulse delay-1000"></div>
+            <div class="absolute bottom-20 left-1/4 w-20 h-20 md:w-28 md:h-28 bg-gradient-to-br from-white/18 to-white/5 rounded-full animate-pulse delay-500"></div>
+          </div>
+          
+          <!-- Enhanced water surface effect -->
+          <div class="absolute top-0 left-0 right-0 h-4 md:h-6 bg-gradient-to-b from-cyan-200/70 to-transparent animate-pulse"></div>
+          
+          <!-- Fish container -->
+          <div id="fishContainer" class="relative w-full h-full">
+            <!-- Fish will be generated here -->
+          </div>
+
+          <!-- Enhanced fishing net -->
+          <div id="fishingNet" class="absolute w-16 h-16 md:w-20 md:h-20 lg:w-24 lg:h-24 pointer-events-none opacity-0 transition-all duration-300">
+            <div class="w-full h-full border-3 md:border-4 border-yellow-400 rounded-full animate-ping shadow-2xl"></div>
+          </div>
+
+          <!-- Enhanced biblical message -->
+          <div id="biblicalMessage" class="absolute bottom-3 md:bottom-6 left-3 md:left-6 right-3 md:right-6 bg-gradient-to-r from-yellow-400/95 to-orange-400/95 rounded-xl md:rounded-3xl p-3 md:p-6 text-center text-gray-800 font-bold hidden shadow-2xl border-2 md:border-3 border-yellow-300">
+            <p class="text-sm md:text-base lg:text-lg">"Echad vuestra red a la derecha de la barca y hallaréis" - Juan 21:6</p>
+          </div>
+        </div>
+
+        <!-- Enhanced Game Controls -->
+        <div class="flex flex-col sm:flex-row justify-center gap-3 md:gap-6 mt-4 md:mt-6 px-2 md:px-3">
+          <button id="startGame" class="bg-gradient-to-r from-green-500 to-emerald-600 hover:from-green-600 hover:to-emerald-700 text-white px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-xl md:rounded-2xl font-bold transition-all duration-300 shadow-xl text-lg md:text-xl lg:text-2xl transform hover:scale-105 border-2 border-white/30">
+            🎮 Iniciar Juego
+          </button>
+          <button id="pauseGame" class="bg-gradient-to-r from-yellow-500 to-orange-600 hover:from-yellow-600 hover:to-orange-700 text-white px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-xl md:rounded-2xl font-bold transition-all duration-300 shadow-xl text-lg md:text-xl lg:text-2xl transform hover:scale-105 border-2 border-white/30 hidden">
+            ⏸️ Pausar
+          </button>
+          <button id="restartGame" class="bg-gradient-to-r from-red-500 to-pink-600 hover:from-red-600 hover:to-pink-700 text-white px-6 md:px-8 lg:px-10 py-3 md:py-4 lg:py-5 rounded-xl md:rounded-2xl font-bold transition-all duration-300 shadow-xl text-lg md:text-xl lg:text-2xl transform hover:scale-105 border-2 border-white/30 hidden">
+            🔄 Reiniciar
+          </button>
+        </div>
+      </div>
+
+      <!-- Enhanced Game Over Modal -->
+      <div id="gameOverModal" class="fixed inset-0 bg-black/90 backdrop-blur-xl z-50 hidden flex items-center justify-center p-2 md:p-4">
+        <div class="bg-gradient-to-br from-white to-gray-100 rounded-2xl md:rounded-3xl p-4 md:p-8 lg:p-12 max-w-sm md:max-w-lg w-full text-center shadow-2xl border-2 md:border-4 border-yellow-400 mx-2">
+          <div class="text-5xl md:text-7xl lg:text-8xl mb-4 md:mb-6 animate-bounce">🎣</div>
+          <h3 class="text-2xl md:text-3xl lg:text-4xl font-bold text-gray-800 mb-3 md:mb-4">¡Juego Terminado!</h3>
+          <div class="text-4xl md:text-5xl lg:text-6xl font-bold text-cyan-600 mb-3 md:mb-4" id="finalScore">0</div>
+          <p class="text-gray-600 mb-6 md:mb-8 text-lg md:text-xl">Peces atrapados</p>
+          <div class="flex flex-col sm:flex-row gap-3 md:gap-4 justify-center">
+            <button id="playAgain" class="bg-gradient-to-r from-cyan-500 to-blue-600 hover:from-cyan-600 hover:to-blue-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg text-base md:text-lg">
+              Jugar de Nuevo
+            </button>
+            <button id="closeGameOver" class="bg-gradient-to-r from-gray-500 to-gray-600 hover:from-gray-600 hover:to-gray-700 text-white px-6 md:px-8 py-3 md:py-4 rounded-xl md:rounded-2xl font-bold transition-all duration-300 transform hover:scale-105 shadow-lg text-base md:text-lg">
+              Cerrar
+            </button>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Add to body
+    document.body.appendChild(fullScreenGame);
+
+    // Initialize welcome screen
+    initWelcomeScreen();
+
+    // Add close button event listener
+    const closeButton = document.getElementById('closeFullScreenGame');
+    closeButton?.addEventListener('click', closeFullScreenGame);
+  }
+
+  // Initialize welcome screen
+  function initWelcomeScreen() {
+    const playerForm = document.getElementById('playerForm') as HTMLFormElement;
+    const avatarOptions = document.querySelectorAll('.avatar-option');
+    let selectedAvatar = '🦝'; // Default avatar
+
+    // Avatar selection
+    avatarOptions.forEach((opt: Element) => {
+      opt.addEventListener('click', function(this: HTMLElement) {
+        // Remove previous selection
+        avatarOptions.forEach((option: Element) => {
+          option.classList.remove('border-yellow-400', 'bg-yellow-400/20');
+          option.classList.add('border-transparent');
+        });
+        
+        // Add selection to clicked option
+        this.classList.remove('border-transparent');
+        this.classList.add('border-yellow-400', 'bg-yellow-400/20');
+        
+        selectedAvatar = this.getAttribute('data-avatar') || '🦊';
+      });
+    });
+
+    // Form submission
+    playerForm?.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      const playerName = (document.getElementById('playerName') as HTMLInputElement).value.trim();
+      
+      if (playerName) {
+        // Store player info in a global variable
+        (window as any).playerInfo = {
+          name: playerName,
+          avatar: selectedAvatar
+        };
+        
+        // Show game container and hide welcome screen
+        const welcomeScreen = document.getElementById('welcomeScreen');
+        const gameContainer = document.getElementById('gameContainer');
+        
+        if (welcomeScreen && gameContainer) {
+          welcomeScreen.classList.add('hidden');
+          gameContainer.classList.remove('hidden');
+          
+          // Update player display
+          const playerAvatar = document.getElementById('playerAvatar');
+          const playerNameDisplay = document.getElementById('playerNameDisplay');
+          
+          if (playerAvatar) playerAvatar.textContent = selectedAvatar;
+          if (playerNameDisplay) playerNameDisplay.textContent = playerName;
+          
+          // Initialize fishing game
+          setTimeout(() => {
+            initFishingGame();
+          }, 100);
+        }
+      }
+    });
+
+    // Set default avatar selection
+    const defaultAvatar = document.querySelector('[data-avatar="🐵"]') as HTMLElement;
+    if (defaultAvatar) {
+      defaultAvatar.classList.remove('border-transparent');
+      defaultAvatar.classList.add('border-yellow-400', 'bg-yellow-400/20');
+    }
+  }
+
+  // Close full screen game
+  function closeFullScreenGame() {
+    const fullScreenGame = document.getElementById('fullScreenGame');
+    if (fullScreenGame) {
+      fullScreenGame.remove();
+    }
+
+    // Show main content again
+    const mainContent = document.querySelector('.min-h-screen');
+    if (mainContent) {
+      mainContent.classList.remove('hidden');
+    }
+  }
+
+  // Load fishing game directly (for modal version)
+  function loadFishingGame() {
+    gameContent.innerHTML = `
+      <div class="fishing-game bg-gradient-to-b from-cyan-500 via-blue-600 to-indigo-700 min-h-screen md:min-h-[600px] rounded-xl p-2 md:p-6 relative overflow-hidden">
+        <!-- Game Header -->
+        <div class="text-center mb-3 md:mb-6 px-2">
+          <h2 class="text-2xl md:text-3xl font-bold text-whrite-900 mb-1 md:mb-2 drop-shadow-lg">🐟 Pesca Milagrosa</h2>
+          <p class="text-blue-100 text-sm md:text-lg drop-shadow-md font-semibold">Ayuda a Pedro a pescar como Jesús le enseñó</p>
+        </div>
+
+        <!-- Game Stats -->
+        <div class="flex justify-between items-center mb-3 md:mb-6 bg-blue-900 bg-opacity-60 backdrop-blur-sm rounded-lg p-2 md:p-4 text-white mx-2 md:mx-0 border border-blue-300 border-opacity-30 shadow-lg">
+          <div class="text-center">
+            <div class="text-lg md:text-2xl font-bold text-yellow-300 drop-shadow-lg" id="score">0</div>
+            <div class="text-xs md:text-sm text-blue-100">Peces</div>
+          </div>
+          <div class="text-center">
+            <div class="text-lg md:text-2xl font-bold text-yellow-300 drop-shadow-lg" id="time">60</div>
+            <div class="text-xs md:text-sm text-blue-100">Seg</div>
+          </div>
+          <div class="text-center">
+            <div class="text-lg md:text-2xl font-bold text-yellow-300 drop-shadow-lg" id="level">1</div>
+            <div class="text-xs md:text-sm text-blue-100">Nivel</div>
+          </div>
+        </div>
+
+        <!-- Game Area -->
+        <div id="gameArea" class="relative bg-gradient-to-b from-cyan-400 via-blue-500 to-indigo-600 rounded-lg h-64 md:h-80 lg:h-96 overflow-hidden cursor-crosshair mx-2 md:mx-0 border-2 border-white border-opacity-30 shadow-2xl">
+          <!-- Water surface effect -->
+          <div class="absolute top-0 left-0 right-0 h-3 bg-cyan-200 opacity-40 animate-pulse"></div>
+          
+          <!-- Fish container -->
+          <div id="fishContainer" class="relative w-full h-full">
+            <!-- Fish will be generated here -->
+          </div>
+
+          <!-- Fishing net -->
+          <div id="fishingNet" class="absolute w-12 h-12 md:w-16 md:h-16 pointer-events-none opacity-0 transition-opacity duration-200">
+            <div class="w-full h-full border-4 border-yellow-300 rounded-full animate-ping shadow-lg"></div>
+          </div>
+
+          <!-- Biblical message -->
+          <div id="biblicalMessage" class="absolute bottom-2 md:bottom-4 left-2 md:left-4 right-2 md:right-4 bg-yellow-100 bg-opacity-95 rounded-lg p-2 md:p-3 text-center text-gray-800 font-semibold hidden shadow-lg border border-yellow-300">
+            <p class="text-xs md:text-sm">"Echad vuestra red a la derecha de la barca y hallaréis" - Juan 21:6</p>
+          </div>
+        </div>
+
+        <!-- Game Controls -->
+        <div class="flex justify-center gap-2 md:gap-4 mt-3 md:mt-6 px-2">
+          <button id="startGame" class="bg-emerald-500 hover:bg-emerald-600 text-white px-4 md:px-8 py-2 md:py-3 rounded-lg font-semibold transition-colors shadow-lg text-sm md:text-base">
+            🎮 Iniciar
+          </button>
+          <button id="pauseGame" class="bg-amber-500 hover:bg-amber-600 text-white px-4 md:px-8 py-2 md:py-3 rounded-lg font-semibold transition-colors shadow-lg hidden text-sm md:text-base">
+            ⏸️ Pausar
+          </button>
+          <button id="restartGame" class="bg-red-500 hover:bg-red-600 text-white px-4 md:px-8 py-2 md:py-3 rounded-lg font-semibold transition-colors shadow-lg hidden text-sm md:text-base">
+            🔄 Reiniciar
+          </button>
+        </div>
+
+        <!-- Game Instructions -->
+        <div class="mt-3 md:mt-6 bg-blue-900 bg-opacity-60 backdrop-blur-sm rounded-lg p-3 md:p-4 text-white mx-2 md:mx-0 border border-blue-300 border-opacity-30 shadow-lg">
+          <h3 class="font-bold text-base md:text-lg mb-2 text-yellow-300">📖 Historia Bíblica</h3>
+          <p class="text-xs md:text-sm leading-relaxed text-blue-100">
+            Jesús se apareció a sus discípulos después de su resurrección. Pedro y los otros habían estado pescando toda la noche sin éxito. 
+            Jesús les dijo que echaran la red al lado derecho de la barca, y pescaron tantos peces que no podían sacar la red. 
+            ¡Ayuda a Pedro a pescar como Jesús le enseñó!
+          </p>
+        </div>
+
+        <!-- Game Over Modal -->
+        <div id="gameOverModal" class="fixed inset-0 bg-black bg-opacity-70 z-50 hidden flex items-center justify-center p-4">
+          <div class="bg-white rounded-2xl p-6 md:p-8 max-w-sm md:max-w-md w-full text-center shadow-2xl">
+            <div class="text-5xl md:text-6xl mb-4">🎣</div>
+            <h3 class="text-xl md:text-2xl font-bold text-gray-800 mb-4">¡Juego Terminado!</h3>
+            <div class="text-3xl md:text-4xl font-bold text-cyan-600 mb-4" id="finalScore">0</div>
+            <p class="text-gray-600 mb-6 text-sm md:text-base">Peces atrapados</p>
+            <div class="flex gap-3 md:gap-4 justify-center">
+              <button id="playAgain" class="bg-cyan-500 hover:bg-cyan-600 text-white px-4 md:px-6 py-2 rounded-lg font-semibold transition-colors text-sm md:text-base">
+                Jugar de Nuevo
+              </button>
+              <button id="closeGameOver" class="bg-gray-500 hover:bg-gray-600 text-white px-4 md:px-6 py-2 rounded-lg font-semibold transition-colors text-sm md:text-base">
+                Cerrar
+              </button>
+              <button id="closeFullScreenFromGameOver" class="bg-gray-500 hover:bg-gray-600 text-white px-4 md:px-6 py-2 rounded-lg font-semibold transition-colors text-sm md:text-base">
+                Salir del Juego
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    `;
+
+    // Initialize fishing game after content is loaded
+    setTimeout(() => {
+      initFishingGame();
+    }, 100);
+  }
+
+  // Close game modal
+  function closeGame() {
+    gameModal.classList.add('hidden');
+    document.body.style.overflow = 'auto';
+    gameContent.innerHTML = '';
+  }
+
+  // Event listeners
+  gameCards.forEach(card => {
+    card.addEventListener('click', function(this: HTMLElement) {
+      const gameType = this.getAttribute('data-game');
+      if (gameType) {
+        openGame(gameType);
+      }
+    });
+  });
+
+  closeGameModal?.addEventListener('click', closeGame);
+
+  // Close modal when clicking outside
+  gameModal?.addEventListener('click', function(e) {
+    if (e.target === gameModal) {
+      closeGame();
+    }
+  });
+
+  // Close modal with Escape key
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape' && !gameModal?.classList.contains('hidden')) {
+      closeGame();
+    }
+  });
+
+  // Fishing Game Logic
+  let fishingGameState = {
+    score: 0,
+    time: 60,
+    level: 1,
+    isPlaying: false,
+    isPaused: false,
+    gameInterval: null as ReturnType<typeof setInterval> | null,
+    fishInterval: null as ReturnType<typeof setInterval> | null,
+    timeInterval: null as ReturnType<typeof setInterval> | null
+  };
+
+  const fishTypes = [
+    { emoji: '🐟', points: 1, speed: 2, rarity: 0.6 },
+    { emoji: '🐠', points: 2, speed: 3, rarity: 0.3 },
+    { emoji: '🐡', points: 3, speed: 4, rarity: 0.1 }
+  ];
+
+  function initFishingGame() {
+    const gameArea = document.getElementById('gameArea') as HTMLElement;
+    const fishContainer = document.getElementById('fishContainer') as HTMLElement;
+    
+    if (!gameArea || !fishContainer) return;
+    
+    // Clear any existing fish
+    fishContainer.innerHTML = '';
+    
+    // Reset game state
+    fishingGameState = {
+      score: 0,
+      time: 60,
+      level: 1,
+      isPlaying: false,
+      isPaused: false,
+      gameInterval: null,
+      fishInterval: null,
+      timeInterval: null
+    };
+    
+    updateFishingDisplay();
+    showBiblicalMessage();
+    
+    // Add event listeners
+    const startButton = document.getElementById('startGame') as HTMLElement;
+    const pauseButton = document.getElementById('pauseGame') as HTMLElement;
+    const restartButton = document.getElementById('restartGame') as HTMLElement;
+    const playAgainButton = document.getElementById('playAgain') as HTMLElement;
+    const closeGameOverButton = document.getElementById('closeGameOver') as HTMLElement;
+    
+    startButton?.addEventListener('click', startFishingGame);
+    pauseButton?.addEventListener('click', pauseFishingGame);
+    restartButton?.addEventListener('click', restartFishingGame);
+    playAgainButton?.addEventListener('click', () => {
+      closeGameOver();
+      restartFishingGame();
+    });
+    closeGameOverButton?.addEventListener('click', closeGameOver);
+  }
+
+  function updateFishingDisplay() {
+    const scoreElement = document.getElementById('score') as HTMLElement;
+    const timeElement = document.getElementById('time') as HTMLElement;
+    const levelElement = document.getElementById('level') as HTMLElement;
+    
+    if (scoreElement) scoreElement.textContent = fishingGameState.score.toString();
+    if (timeElement) timeElement.textContent = fishingGameState.time.toString();
+    if (levelElement) levelElement.textContent = fishingGameState.level.toString();
+  }
+
+  function showBiblicalMessage() {
+    const biblicalMessage = document.getElementById('biblicalMessage') as HTMLElement;
+    if (!biblicalMessage) return;
+    
+    biblicalMessage.classList.remove('hidden');
+    setTimeout(() => {
+      biblicalMessage.classList.add('hidden');
+    }, 3000);
+  }
+
+  function createFish() {
+    const fishContainer = document.getElementById('fishContainer') as HTMLElement;
+    const gameArea = document.getElementById('gameArea') as HTMLElement;
+    
+    if (!fishContainer || !gameArea || !fishingGameState.isPlaying || fishingGameState.isPaused) return;
+
+    const fishType = fishTypes[Math.floor(Math.random() * fishTypes.length)];
+    const fish = document.createElement('div');
+    
+    // Enhanced responsive fish sizing
+    const isMobile = window.innerWidth <= 768;
+    const isSmallMobile = window.innerWidth <= 480;
+    const isVerySmall = window.innerWidth <= 360;
+    
+    let fishSize = 'text-4xl';
+    if (isVerySmall) {
+      fishSize = 'text-2xl';
+    } else if (isSmallMobile) {
+      fishSize = 'text-3xl';
+    } else if (isMobile) {
+      fishSize = 'text-3xl md:text-4xl';
+    }
+    
+    fish.className = `fish absolute ${fishSize} cursor-pointer select-none transition-transform duration-200 hover:scale-110`;
+    fish.textContent = fishType.emoji;
+    fish.style.left = '-60px';
+    fish.style.top = Math.random() * (gameArea.offsetHeight - 60) + 'px';
+    fish.style.zIndex = '10';
+    
+    // Add fish-specific styling
+    if (fishType.emoji === '🐟') {
+      fish.style.filter = 'drop-shadow(2px 2px 4px rgba(0,0,0,0.4))';
+    } else if (fishType.emoji === '🐠') {
+      fish.style.filter = 'drop-shadow(2px 2px 4px rgba(255,165,0,0.4))';
+    } else if (fishType.emoji === '🐡') {
+      fish.style.filter = 'drop-shadow(2px 2px 4px rgba(255,0,0,0.4))';
+    }
+    
+    (fish as any).fishData = fishType;
+    fishContainer.appendChild(fish);
+    
+    // Enhanced speed adjustment based on screen size
+    let baseDuration = 10000;
+    if (isVerySmall) {
+      baseDuration = 6000;
+    } else if (isSmallMobile) {
+      baseDuration = 7000;
+    } else if (isMobile) {
+      baseDuration = 8000;
+    }
+    
+    const duration = (baseDuration - fishType.speed * 1000) / fishingGameState.level;
+    fish.style.transition = `left ${duration}ms linear`;
+    
+    setTimeout(() => {
+      fish.style.left = gameArea.offsetWidth + 'px';
+    }, 100);
+    
+    setTimeout(() => {
+      if (fish.parentNode) {
+        fish.parentNode.removeChild(fish);
+      }
+    }, duration + 100);
+    
+    fish.addEventListener('click', catchFish);
+  }
+
+  function catchFish(this: HTMLElement) {
+    if (!fishingGameState.isPlaying || fishingGameState.isPaused) return;
+    
+    const fishData = (this as any).fishData;
+    fishingGameState.score += fishData.points;
+    
+    showFishingNet(this.offsetLeft, this.offsetTop);
+    this.remove();
+    updateFishingDisplay();
+    
+    if (fishingGameState.score % 10 === 0) {
+      fishingGameState.level++;
+      showBiblicalMessage();
+    }
+  }
+
+  function showFishingNet(x: number, y: number) {
+    const fishingNet = document.getElementById('fishingNet') as HTMLElement;
+    if (!fishingNet) return;
+    
+    // Enhanced responsive positioning
+    const isMobile = window.innerWidth <= 768;
+    const isSmallMobile = window.innerWidth <= 480;
+    const isVerySmall = window.innerWidth <= 360;
+    
+    let offset = 32;
+    if (isVerySmall) {
+      offset = 16;
+    } else if (isSmallMobile) {
+      offset = 20;
+    } else if (isMobile) {
+      offset = 24;
+    }
+    
+    fishingNet.style.left = (x - offset) + 'px';
+    fishingNet.style.top = (y - offset) + 'px';
+    fishingNet.style.opacity = '1';
+    
+    // Enhanced visual feedback
+    fishingNet.style.transform = 'scale(1.2)';
+    
+    setTimeout(() => {
+      fishingNet.style.opacity = '0';
+      fishingNet.style.transform = 'scale(1)';
+    }, 600);
+  }
+
+  function startFishingGame() {
+    const gameArea = document.getElementById('gameArea') as HTMLElement;
+    const startButton = document.getElementById('startGame') as HTMLElement;
+    const pauseButton = document.getElementById('pauseGame') as HTMLElement;
+    const restartButton = document.getElementById('restartGame') as HTMLElement;
+    
+    if (!gameArea) return;
+    
+    fishingGameState.isPlaying = true;
+    fishingGameState.isPaused = false;
+    
+    startButton.classList.add('hidden');
+    pauseButton.classList.remove('hidden');
+    restartButton.classList.remove('hidden');
+    
+    fishingGameState.fishInterval = setInterval(createFish, 1000 / fishingGameState.level);
+    
+    fishingGameState.timeInterval = setInterval(() => {
+      if (!fishingGameState.isPaused) {
+        fishingGameState.time--;
+        updateFishingDisplay();
+        
+        if (fishingGameState.time <= 0) {
+          endFishingGame();
+        }
+      }
+    }, 1000);
+  }
+
+  function pauseFishingGame() {
+    const pauseButton = document.getElementById('pauseGame') as HTMLElement;
+    
+    fishingGameState.isPaused = !fishingGameState.isPaused;
+    
+    if (fishingGameState.isPaused) {
+      pauseButton.textContent = '▶️ Continuar';
+    } else {
+      pauseButton.textContent = '⏸️ Pausar';
+    }
+  }
+
+  function endFishingGame() {
+    const fishContainer = document.getElementById('fishContainer') as HTMLElement;
+    const finalScoreElement = document.getElementById('finalScore') as HTMLElement;
+    const gameOverModal = document.getElementById('gameOverModal') as HTMLElement;
+    
+    fishingGameState.isPlaying = false;
+    
+    if (fishingGameState.fishInterval) clearInterval(fishingGameState.fishInterval);
+    if (fishingGameState.timeInterval) clearInterval(fishingGameState.timeInterval);
+    
+    if (fishContainer) fishContainer.innerHTML = '';
+    
+    if (finalScoreElement) finalScoreElement.textContent = fishingGameState.score.toString();
+    
+    // Add player info to game over modal
+    const playerInfo = (window as any).playerInfo;
+    if (playerInfo && gameOverModal) {
+      const modalContent = gameOverModal.querySelector('.bg-gradient-to-br');
+      if (modalContent) {
+        const playerInfoDiv = document.createElement('div');
+        playerInfoDiv.className = 'mb-4 p-3 bg-gradient-to-r from-blue-100 to-purple-100 rounded-xl border border-blue-200';
+        playerInfoDiv.innerHTML = `
+          <div class="flex items-center justify-center space-x-2">
+            <span class="text-2xl">${playerInfo.avatar}</span>
+            <span class="text-lg font-semibold text-gray-700">¡${playerInfo.name}, has terminado!</span>
+          </div>
+        `;
+        modalContent.insertBefore(playerInfoDiv, modalContent.firstChild);
+      }
+    }
+    
+    if (gameOverModal) gameOverModal.classList.remove('hidden');
+  }
+
+  function restartFishingGame() {
+    initFishingGame();
+    startFishingGame();
+  }
+
+  function closeGameOver() {
+    const gameOverModal = document.getElementById('gameOverModal') as HTMLElement;
+    const startButton = document.getElementById('startGame') as HTMLElement;
+    const pauseButton = document.getElementById('pauseGame') as HTMLElement;
+    const restartButton = document.getElementById('restartGame') as HTMLElement;
+    
+    if (gameOverModal) gameOverModal.classList.add('hidden');
+    
+    startButton.classList.remove('hidden');
+    pauseButton.classList.add('hidden');
+    restartButton.classList.add('hidden');
+    pauseButton.textContent = '⏸️ Pausar';
+  }
+
+  // Add event listener for close full screen from game over
+  document.addEventListener('click', function(e) {
+    if ((e.target as HTMLElement)?.id === 'closeFullScreenFromGameOver') {
+      closeFullScreenGame();
+    }
+  });
+</script>
+
+<style>
+  @media (max-width: 768px) {
+    .game-card {
+      margin-bottom: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .game-card .text-6xl {
+      font-size: 3rem;
+    }
+    
+    .game-card .text-2xl {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Fishing Game Styles */
+  .fish {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    filter: drop-shadow(2px 2px 4px rgba(0,0,0,0.3));
+    transition: transform 0.2s ease, filter 0.2s ease;
+  }
+  
+  .fish:hover {
+    transform: scale(1.1);
+    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.4));
+  }
+  
+  .fishing-game {
+    font-family: 'Arial', sans-serif;
+  }
+  
+  /* Mobile optimizations */
+  @media (max-width: 768px) {
+    .fishing-game {
+      min-height: 100vh !important;
+      padding: 0.5rem !important;
+    }
+    
+    #gameArea {
+      height: 50vh !important;
+      min-height: 300px;
+    }
+    
+    .fish {
+      font-size: 2.5rem !important;
+      min-width: 48px;
+      min-height: 48px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    /* Improve touch targets */
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    /* Better spacing for mobile */
+    .fishing-game > div {
+      margin-bottom: 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .fishing-game {
+      padding: 0.25rem !important;
+    }
+    
+    .fishing-game h2 {
+      font-size: 1.75rem !important;
+      line-height: 1.2;
+    }
+    
+    #gameArea {
+      height: 45vh !important;
+      min-height: 250px;
+    }
+    
+    .fish {
+      font-size: 2rem !important;
+    }
+    
+    /* Compact stats for very small screens */
+    .fishing-game .flex.justify-between {
+      gap: 0.5rem;
+    }
+    
+    .fishing-game .flex.justify-between > div {
+      flex: 1;
+      min-width: 0;
+    }
+  }
+  
+  /* Landscape mobile optimization */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .fishing-game {
+      min-height: 100vh !important;
+    }
+    
+    #gameArea {
+      height: 60vh !important;
+    }
+    
+    .fishing-game > div:not(#gameArea) {
+      margin-bottom: 0.5rem;
+    }
+  }
+  
+  /* High contrast mode for better visibility */
+  @media (prefers-contrast: high) {
+    .fish {
+      filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.8));
+    }
+    
+    .fishing-game {
+      background: linear-gradient(to bottom, #1e40af, #1e3a8a, #1e1b4b) !important;
+    }
+  }
+  
+  /* Reduced motion for accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .fish {
+      transition: none;
+    }
+    
+    .animate-pulse {
+      animation: none;
+    }
+    
+    .animate-ping {
+      animation: none;
+    }
+  }
+  
+  /* Prevent zoom on input focus for mobile */
+  @media (max-width: 768px) {
+    input, textarea, select {
+      font-size: 16px !important;
+    }
+  }
+  
+  /* Better touch feedback */
+  @media (hover: none) and (pointer: coarse) {
+    .fish:active {
+      transform: scale(0.95);
+    }
+    
+    button:active {
+      transform: scale(0.98);
+    }
+  }
+
+  /* Full Screen Game Styles */
+  .fishing-game-fullscreen {
+    font-family: 'Arial', sans-serif;
+  }
+
+  /* Welcome Screen Styles */
+  #welcomeScreen {
+    background: linear-gradient(135deg, rgba(59, 130, 246, 0.1) 0%, rgba(147, 51, 234, 0.1) 50%, rgba(79, 70, 229, 0.1) 100%);
+  }
+
+  .avatar-option {
+    transition: all 0.3s ease;
+  }
+
+  .avatar-option:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+  }
+
+  /* Enhanced Fish Styles */
+  .fish {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.4));
+    transition: all 0.3s ease;
+    animation: fishSwim 2s ease-in-out infinite alternate;
+  }
+  
+  .fish:hover {
+    transform: scale(1.2) rotate(5deg);
+    filter: drop-shadow(5px 5px 10px rgba(0,0,0,0.6));
+  }
+
+  @keyframes fishSwim {
+    0% { transform: translateY(0px) rotate(0deg); }
+    50% { transform: translateY(-3px) rotate(2deg); }
+    100% { transform: translateY(0px) rotate(0deg); }
+  }
+
+  /* Enhanced Game Area */
+  #gameArea {
+    background: linear-gradient(180deg, 
+      #67e8f9 0%, 
+      #3b82f6 25%, 
+      #6366f1 50%, 
+      #8b5cf6 75%, 
+      #7c3aed 100%
+    );
+    position: relative;
+    overflow: hidden;
+  }
+
+  #gameArea::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+      radial-gradient(circle at 20% 30%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 80% 70%, rgba(255,255,255,0.1) 0%, transparent 50%),
+      radial-gradient(circle at 40% 80%, rgba(255,255,255,0.05) 0%, transparent 50%);
+    pointer-events: none;
+  }
+
+  /* Enhanced Buttons */
+  button {
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+
+  button::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+  }
+
+  button:hover::before {
+    left: 100%;
+  }
+
+  /* Enhanced Stats */
+  .stats-container {
+    background: linear-gradient(135deg, rgba(30, 58, 138, 0.8) 0%, rgba(88, 28, 135, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  }
+
+  /* Enhanced Biblical Message */
+  #biblicalMessage {
+    background: linear-gradient(135deg, rgba(251, 191, 36, 0.95) 0%, rgba(249, 115, 22, 0.95) 100%);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+    animation: messageGlow 2s ease-in-out infinite alternate;
+  }
+
+  @keyframes messageGlow {
+    0% { box-shadow: 0 8px 32px rgba(251, 191, 36, 0.3); }
+    100% { box-shadow: 0 8px 32px rgba(251, 191, 36, 0.6); }
+  }
+
+  /* Enhanced Fishing Net */
+  #fishingNet {
+    filter: drop-shadow(0 0 10px rgba(251, 191, 36, 0.8));
+  }
+
+  /* Full screen game optimizations */
+  @media (max-width: 768px) {
+    .fishing-game-fullscreen {
+      padding: 0.5rem !important;
+    }
+    
+    .fishing-game-fullscreen #gameArea {
+      min-height: 50vh;
+    }
+    
+    .fishing-game-fullscreen .fish {
+      font-size: 2.5rem !important;
+      min-width: 48px;
+      min-height: 48px;
+    }
+
+    /* Mobile welcome screen */
+    #welcomeScreen .bg-white\/10 {
+      margin: 1rem;
+      padding: 1.5rem;
+    }
+
+    .avatar-option {
+      padding: 0.5rem;
+    }
+
+    .avatar-option .text-3xl {
+      font-size: 2rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .fishing-game-fullscreen {
+      padding: 0.25rem !important;
+    }
+    
+    .fishing-game-fullscreen h2 {
+      font-size: 1.75rem !important;
+    }
+    
+    .fishing-game-fullscreen #gameArea {
+      min-height: 45vh;
+    }
+    
+    .fishing-game-fullscreen .fish {
+      font-size: 2rem !important;
+    }
+
+    /* Small screen welcome screen */
+    #welcomeScreen .bg-white\/10 {
+      margin: 0.5rem;
+      padding: 1rem;
+    }
+
+    .avatar-option {
+      padding: 0.25rem;
+    }
+
+    .avatar-option .text-3xl {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Landscape full screen optimization */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .fishing-game-fullscreen #gameArea {
+      min-height: 60vh;
+    }
+
+    #welcomeScreen .bg-white\/10 {
+      max-width: 90%;
+      margin: 0.5rem;
+    }
+    
+    .avatar-option {
+      padding: 0.5rem;
+    }
+    
+    .avatar-option .text-4xl {
+      font-size: 2rem;
+    }
+  }
+
+  /* Enhanced Animations */
+  @keyframes bounce {
+    0%, 20%, 53%, 80%, 100% {
+      transform: translate3d(0,0,0);
+    }
+    40%, 43% {
+      transform: translate3d(0, -30px, 0);
+    }
+    70% {
+      transform: translate3d(0, -15px, 0);
+    }
+    90% {
+      transform: translate3d(0, -4px, 0);
+    }
+  }
+
+  .animate-bounce {
+    animation: bounce 2s infinite;
+  }
+
+  /* Enhanced input styles */
+  input[type="text"] {
+    backdrop-filter: blur(10px);
+  }
+
+  input[type="text"]:focus {
+    box-shadow: 0 0 20px rgba(36, 251, 75, 0.5);
+  }
+
+  /* Enhanced Close Button */
+  #closeFullScreenGame {
+    background: linear-gradient(135deg, #2684c3 0%, #0b7a8b 100%);
+    box-shadow: 0 8px 32px rgba(68, 14, 14, 0.5);
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+    border: 4px solid rgba(255, 255, 255, 0.4);
+  }
+
+  #closeFullScreenGame:hover {
+    background: linear-gradient(135deg, #135781 0%, #133eb4 100%);
+    box-shadow: 0 12px 40px rgba(9, 4, 60, 0.7);
+    transform: scale(1.1) rotate(5deg);
+    border-color: rgba(255, 255, 255, 0.6);
+  }
+
+  #closeFullScreenGame:active {
+    transform: scale(0.95) rotate(0deg);
+  }
+
+  /* Enhanced Game Cards */
+  .game-card {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .game-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.3), transparent);
+    transition: left 0.6s;
+  }
+
+  .game-card:hover::before {
+    left: 100%;
+  }
+
+  /* Enhanced Avatar Options */
+  .avatar-option {
+    position: relative;
+    overflow: hidden;
+  }
+
+  .avatar-option::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(45deg, transparent 30%, rgba(255,255,255,0.1) 50%, transparent 70%);
+    transform: translateX(-100%);
+    transition: transform 0.6s;
+  }
+
+  .avatar-option:hover::before {
+    transform: translateX(100%);
+  }
+
+  /* Enhanced Mobile Responsiveness */
+  @media (max-width: 768px) {
+    .game-card {
+      margin-bottom: 1rem;
+    }
+    
+    .game-card .text-5xl {
+      font-size: 3.5rem;
+    }
+    
+    .game-card .text-xl {
+      font-size: 1.5rem;
+    }
+    
+    .game-card p {
+      font-size: 0.9rem;
+    }
+    
+    .game-card .bg-gradient-to-r {
+      font-size: 0.9rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .game-card .text-5xl {
+      font-size: 3rem;
+    }
+    
+    .game-card .text-xl {
+      font-size: 1.25rem;
+    }
+    
+    .game-card p {
+      font-size: 0.8rem;
+    }
+    
+    .game-card .bg-gradient-to-r {
+      font-size: 0.8rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+  /* Enhanced Welcome Screen Mobile */
+  @media (max-width: 768px) {
+    #welcomeScreen .bg-gradient-to-br {
+      margin: 0.5rem;
+      padding: 1rem;
+    }
+
+    .avatar-option {
+      padding: 0.5rem;
+    }
+
+    .avatar-option .text-3xl {
+      font-size: 2rem;
+    }
+    
+    #playerName {
+      font-size: 1rem;
+      padding: 0.5rem 0.75rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    #welcomeScreen .bg-gradient-to-br {
+      margin: 0.25rem;
+      padding: 0.75rem;
+    }
+
+    .avatar-option {
+      padding: 0.25rem;
+    }
+
+    .avatar-option .text-3xl {
+      font-size: 1.5rem;
+    }
+    
+    #playerName {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.6rem;
+    }
+  }
+
+  /* Enhanced Game Area Mobile */
+  @media (max-width: 768px) {
+    .fishing-game-fullscreen {
+      padding: 0.5rem !important;
+    }
+    
+    .fishing-game-fullscreen #gameArea {
+      min-height: 60vh;
+    }
+    
+    .fishing-game-fullscreen .fish {
+      font-size: 2.5rem !important;
+      min-width: 48px;
+      min-height: 48px;
+    }
+
+    .fishing-game-fullscreen button {
+      font-size: 1rem;
+      padding: 0.5rem 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .fishing-game-fullscreen {
+      padding: 0.25rem !important;
+    }
+    
+    .fishing-game-fullscreen h2 {
+      font-size: 1.75rem !important;
+    }
+    
+    .fishing-game-fullscreen #gameArea {
+      min-height: 55vh;
+    }
+    
+    .fishing-game-fullscreen .fish {
+      font-size: 2rem !important;
+    }
+
+    .fishing-game-fullscreen button {
+      font-size: 0.9rem;
+      padding: 0.4rem 0.8rem;
+    }
+  }
+
+  /* Enhanced Landscape Mode */
+  @media (max-width: 768px) and (orientation: landscape) {
+    .fishing-game-fullscreen #gameArea {
+      min-height: 70vh;
+    }
+
+    #welcomeScreen .bg-gradient-to-br {
+      max-width: 90%;
+      margin: 0.25rem;
+    }
+    
+    .avatar-option {
+      padding: 0.25rem;
+    }
+    
+    .avatar-option .text-3xl {
+      font-size: 1.5rem;
+    }
+  }
+
+  /* Enhanced Touch Targets for Mobile */
+  @media (max-width: 768px) {
+    .fish {
+      min-width: 48px !important;
+      min-height: 48px !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
+    }
+    
+    button {
+      min-height: 44px;
+      min-width: 44px;
+    }
+    
+    .avatar-option {
+      min-height: 60px;
+      min-width: 60px;
+    }
+  }
+
+  /* Enhanced Small Screen Optimizations */
+  @media (max-width: 360px) {
+    .game-card .text-5xl {
+      font-size: 2.5rem;
+    }
+    
+    .game-card .text-xl {
+      font-size: 1.125rem;
+    }
+    
+    .fishing-game-fullscreen .fish {
+      font-size: 1.75rem !important;
+    }
+    
+    .fishing-game-fullscreen button {
+      font-size: 0.8rem;
+      padding: 0.3rem 0.6rem;
+    }
+  }
+
+  /* Enhanced Animations */
+  @keyframes float {
+    0%, 100% { transform: translateY(0px); }
+    50% { transform: translateY(-10px); }
+  }
+
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 0 20px rgba(251, 191, 36, 0.3); }
+    50% { box-shadow: 0 0 40px rgba(251, 191, 36, 0.6); }
+  }
+
+  .animate-glow {
+    animation: glow 2s ease-in-out infinite;
+  }
+
+  /* Enhanced Focus States */
+  input:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.3), 0 0 20px rgba(251, 191, 36, 0.5);
+  }
+
+  button:focus {
+    outline: none;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.3);
+  }
+
+  /* Enhanced Accessibility */
+  @media (prefers-reduced-motion: reduce) {
+    .game-card::before,
+    .avatar-option::before,
+    button::before {
+      animation: none;
+      transition: none;
+    }
+    
+    .animate-bounce,
+    .animate-pulse,
+    .animate-ping {
+      animation: none;
+    }
+    
+    .fish {
+      animation: none;
+    }
+  }
+
+  /* Enhanced High Contrast */
+  @media (prefers-contrast: high) {
+    .game-card {
+      border-width: 3px;
+      border-color: #000;
+    }
+    
+    .avatar-option {
+      border-width: 3px;
+    }
+    
+    button {
+      border-width: 3px;
+      border-color: #000;
+    }
+    
+    .fish {
+      filter: drop-shadow(3px 3px 6px rgba(0,0,0,0.8));
+    }
+  }
+
+  /* Enhanced Performance Optimizations */
+  .fish {
+    will-change: transform, left;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Enhanced Loading States */
+  .game-card {
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  }
+
+  .game-card:hover {
+    transform: translateY(-8px) scale(1.02);
+  }
+
+  /* Enhanced Focus States for Better Accessibility */
+  .game-card:focus-visible {
+    outline: 3px solid #3b82f6;
+    outline-offset: 2px;
+  }
+
+  button:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+  }
+
+  .avatar-option:focus-visible {
+    outline: 3px solid #fbbf24;
+    outline-offset: 2px;
+  }
+
+  /* Enhanced Mobile Gesture Support */
+  @media (hover: none) and (pointer: coarse) {
+    .game-card:hover {
+      transform: none;
+    }
+    
+    .game-card:active {
+      transform: scale(0.98);
+    }
+    
+    .fish:active {
+      transform: scale(0.9);
+    }
+  }
+
+  /* Enhanced Print Styles */
+  @media print {
+    .game-card,
+    button,
+    #gameArea {
+      display: none !important;
+    }
+  }
+</style>

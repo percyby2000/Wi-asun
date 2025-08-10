@@ -1,0 +1,360 @@
+---
+// Header component with responsive design and dynamic interactions
+---
+
+<header class="bg-gradient-to-r from-orange-50 to-amber-50 shadow-lg sticky top-0 z-50 transition-all duration-300">
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="flex justify-between items-center h-16 md:h-20">
+      <!-- Logo Section -->
+      <div class="flex items-center space-x-3 group cursor-pointer transition-transform duration-300 hover:scale-105">
+        <!-- Logo Image -->
+        <div class="relative">
+          <img 
+            src="/logo.svg" 
+            alt="chaskisum logo" 
+            class="w-10 h-10 md:w-12 md:h-12 object-contain transition-all duration-300 group-hover:rotate-6 header-logo"
+          />
+        </div>
+        <!-- Brand Name -->
+        <span class="text-2xl md:text-3xl font-bold text-teal-800 group-hover:text-teal-700 transition-colors duration-300">
+          CHASKÍSUM
+        </span>
+      </div>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center space-x-8">
+        <a href="/" class="text-teal-800 hover:text-teal-600 font-medium transition-all duration-300 relative group">
+          Inicio
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
+        </a>
+
+        <a href="/historias" class="text-teal-800 hover:text-teal-600 font-medium transition-all duration-300 relative group">
+          Videocuentos
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="/juegos" class="text-teal-800 hover:text-teal-600 font-medium transition-all duration-300 relative group">
+          Juegos
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="/tienda" class="text-teal-800 hover:text-teal-600 font-medium transition-all duration-300 relative group">
+          Tienda
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="/nosotros" class="text-teal-800 hover:text-teal-600 font-medium transition-all duration-300 relative group">
+          Nosotros
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
+        </a>
+      </nav>
+      
+
+  <!-- Desktop CTA Button o Cerrar Sesión para admin en /admin -->
+  <div class="hidden md:block" id="header-user-actions"></div>
+
+      <!-- Mobile Menu Button -->
+      <div class="md:hidden">
+        <button 
+          id="mobile-menu-button"
+          class="text-teal-800 hover:text-teal-600 focus:outline-none focus:text-teal-600 transition-colors duration-300"
+          aria-label="Toggle mobile menu"
+        >
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile Navigation Menu -->
+    <div id="mobile-menu" class="md:hidden hidden">
+      <div class="px-2 pt-2 pb-3 space-y-1 bg-white/95 backdrop-blur-sm rounded-lg shadow-xl mt-2 border border-orange-100">
+        <a href="/" class="block px-3 py-2 text-teal-800 hover:text-teal-600 hover:bg-orange-50 rounded-md transition-all duration-300 font-medium">
+          Inicio
+        </a>
+        <a href="/nosotros" class="block px-3 py-2 text-teal-800 hover:text-teal-600 hover:bg-orange-50 rounded-md transition-all duration-300 font-medium">
+          Nosotros
+        </a>
+        <a href="/historias" class="block px-3 py-2 text-teal-800 hover:text-teal-600 hover:bg-orange-50 rounded-md transition-all duration-300 font-medium">
+          Videocuentos
+        </a>
+                <a href="/juegos" class="text-teal-800 hover:text-teal-600 font-medium transition-all duration-300 relative group">
+          Juegos
+          <span class="absolute -bottom-1 left-0 w-0 h-0.5 bg-teal-600 group-hover:w-full transition-all duration-300"></span>
+        </a>
+        <a href="/tienda" class="block px-3 py-2 text-teal-800 hover:text-teal-600 hover:bg-orange-50 rounded-md transition-all duration-300 font-medium">
+          Tienda
+        </a>
+        <div class="pt-2 border-t border-orange-200">
+
+              <!-- Header con login y admin -->
+    <div class="flex justify-between items-center mb-8">
+      <div class="flex gap-4">
+        <div id="user-info" class="hidden">
+          <span id="user-name" class="text-teal-700 font-semibold"></span>
+        </div>
+        <button id="login-btn" class="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded-lg font-semibold transition-all">Iniciar Sesión</button>
+      </div>
+    </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<script>
+  // Mobile menu functionality
+  const mobileMenuButton = document.getElementById('mobile-menu-button');
+  const mobileMenu = document.getElementById('mobile-menu');
+  let isMenuOpen = false;
+
+  if (mobileMenuButton && mobileMenu) {
+    mobileMenuButton.addEventListener('click', (e) => {
+      e.stopPropagation(); // Prevent event from bubbling up
+      isMenuOpen = !isMenuOpen;
+      
+      if (isMenuOpen) {
+        mobileMenu.classList.remove('hidden');
+        mobileMenu.classList.add('animate-slideDown');
+        // Change icon to X
+        mobileMenuButton.innerHTML = `
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        `;
+      } else {
+        mobileMenu.classList.add('animate-slideUp');
+        setTimeout(() => {
+          mobileMenu.classList.add('hidden');
+          mobileMenu.classList.remove('animate-slideUp');
+        }, 300);
+        // Change icon back to hamburger
+        mobileMenuButton.innerHTML = `
+          <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+          </svg>
+        `;
+      }
+    });
+
+    // Prevent menu from closing when clicking inside it
+    mobileMenu.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+
+    // Close menu when clicking outside
+    document.addEventListener('click', (e) => {
+      const target = e.target as Node;
+      if (!mobileMenuButton.contains(target) && !mobileMenu.contains(target)) {
+        if (isMenuOpen) {
+          isMenuOpen = false;
+          mobileMenu.classList.add('animate-slideUp');
+          setTimeout(() => {
+            mobileMenu.classList.add('hidden');
+            mobileMenu.classList.remove('animate-slideUp');
+          }, 300);
+          mobileMenuButton.innerHTML = `
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            </svg>
+          `;
+        }
+      }
+    });
+  }
+
+  // Smooth scrolling for navigation links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', (e: Event) => {
+      e.preventDefault();
+      const href = (anchor as HTMLAnchorElement).getAttribute('href');
+      const target = href ? document.querySelector(href) : null;
+      if (target) {
+        target.scrollIntoView({
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    });
+  });
+
+  // Header scroll effect
+  let lastScrollTop = 0;
+  const header = document.querySelector('header');
+  
+  window.addEventListener('scroll', () => {
+    const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+    
+    if (scrollTop > lastScrollTop && scrollTop > 100) {
+      // Scrolling down
+      header?.classList.add('-translate-y-full');
+    } else {
+      // Scrolling up
+      header?.classList.remove('-translate-y-full');
+    }
+    
+    lastScrollTop = scrollTop;
+  });
+
+  // Logo animation on header hover
+  const headerLogo = document.querySelector('.header-logo');
+  let animationTimeout: ReturnType<typeof setTimeout>;
+
+  if (header && headerLogo) {
+    header.addEventListener('mouseenter', () => {
+      // Clear any existing timeout
+      if (animationTimeout) {
+        clearTimeout(animationTimeout);
+      }
+      
+      // Start floating animation
+      headerLogo.classList.add('animate-float');
+      headerLogo.classList.remove('animate-bounce');
+    });
+
+    header.addEventListener('mouseleave', () => {
+      // Stop floating animation
+      headerLogo.classList.remove('animate-float');
+      
+      // Add a small bounce effect when leaving
+      headerLogo.classList.add('animate-bounce');
+      
+      // Remove bounce after animation completes
+      animationTimeout = setTimeout(() => {
+        headerLogo.classList.remove('animate-bounce');
+      }, 1500);
+    });
+  }
+
+  // Dynamic button functionality
+  // Botón dinámico y acciones de usuario en header
+  const headerUserActions = document.getElementById('header-user-actions');
+  const dynamicBtn = document.getElementById('dynamic-btn');
+  const mobileDynamicBtn = document.getElementById('mobile-dynamic-btn');
+
+  function updateHeaderUserActions() {
+    const currentUser = JSON.parse(localStorage.getItem('currentUser') || 'null');
+    // Solo mostrar botón de acceder o cerrar cuenta, nunca 'Admin'
+    if (headerUserActions) {
+      headerUserActions.innerHTML = '';
+      headerUserActions.innerHTML = `
+        <button id="dynamic-btn" class="bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2">Acceder</button>
+      `;
+      const dynamicBtn = document.getElementById('dynamic-btn');
+      if (dynamicBtn) {
+        dynamicBtn.addEventListener('click', () => {
+          if (currentUser) {
+            if (confirm('¿Deseas cerrar sesión?')) {
+              localStorage.removeItem('currentUser');
+              updateHeaderUserActions();
+            }
+          } else {
+            window.location.href = '/login';
+          }
+        });
+        // Cambiar texto y color si está logueado
+        if (currentUser) {
+          dynamicBtn.textContent = 'Cerrar Cuenta';
+          dynamicBtn.className = 'bg-gradient-to-r from-orange-400 to-orange-500 hover:from-orange-500 hover:to-orange-600 text-white px-6 py-2.5 rounded-full font-medium shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-orange-400 focus:ring-offset-2';
+        } else {
+          dynamicBtn.textContent = 'Acceder';
+        }
+      }
+    }
+  }
+
+  // Actualizar al cargar y al cambiar usuario
+  updateHeaderUserActions();
+  window.addEventListener('storage', (e) => {
+    if (e.key === 'currentUser') {
+      updateHeaderUserActions();
+    }
+  });
+</script>
+
+<style>
+  @keyframes slideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+  }
+
+  @keyframes float {
+    0%, 100% {
+      transform: translateY(0px) rotate(0deg);
+    }
+    25% {
+      transform: translateY(-3px) rotate(2deg);
+    }
+    50% {
+      transform: translateY(-6px) rotate(0deg);
+    }
+    75% {
+      transform: translateY(-3px) rotate(-2deg);
+    }
+  }
+
+  @keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+      transform: translateY(0) scale(1);
+    }
+    40% {
+      transform: translateY(-8px) scale(1.05);
+    }
+    60% {
+      transform: translateY(-4px) scale(1.02);
+    }
+  }
+
+  .animate-slideDown {
+    animation: slideDown 0.3s ease-out forwards;
+  }
+
+  .animate-slideUp {
+    animation: slideUp 0.3s ease-out forwards;
+  }
+
+  .header-logo {
+    transition: all 0.3s ease;
+  }
+
+  .header-logo.animate-float {
+    animation: float 2s ease-in-out infinite;
+  }
+
+  .header-logo.animate-bounce {
+    animation: bounce 1.5s ease-in-out infinite;
+  }
+
+  /* Custom scrollbar for webkit browsers */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #f97316, #ea580c);
+    border-radius: 4px;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(to bottom, #ea580c, #dc2626);
+  }
+</style>

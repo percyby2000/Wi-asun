@@ -1,0 +1,926 @@
+---
+// Bible Stories Catalog Component for Children
+---
+
+<section class="py-8 md:py-16 bg-gradient-to-br from-amber-50 via-orange-50 to-yellow-50 relative overflow-hidden">
+  <!-- Background decorative elements -->
+  <div class="absolute inset-0 opacity-10">
+    <div class="absolute top-10 left-10 w-16 md:w-32 h-16 md:h-32 bg-orange-300 rounded-full animate-pulse"></div>
+    <div class="absolute top-40 right-20 w-12 md:w-24 h-12 md:h-24 bg-teal-300 rounded-full animate-bounce"></div>
+    <div class="absolute bottom-20 left-1/4 w-10 md:w-20 h-10 md:h-20 bg-orange-400 rounded-full animate-ping"></div>
+  </div>
+
+  <div class="container mx-auto px-4 relative z-10">
+
+
+    <!-- Filters Section -->
+    <div class="bg-white rounded-2xl md:rounded-3xl p-3 md:p-5 shadow-xl mb-8 md:mb-12 border border-orange-200">
+             <div class="text-center mb-4 md:mb-8">
+         <h2 class="text-xl md:text-3xl font-bold text-teal-600 mb-2 md:mb-4">Encuentra tu Historia</h2>
+         <p class="text-orange-300 text-xs md:text-base px-2">
+            Descubre las hermosas historias de la Biblia contadas especialmente para ti
+          </p>
+         <p class="text-orange-600 text-xs md:text-base">Filtra por libro de la Biblia</p>
+       </div>
+       
+       <!-- Book Filter Tabs -->
+       <div class="flex flex-wrap justify-center gap-1.5 md:gap-4 mb-4 md:mb-8 px-2">
+                 <button 
+           class="filter-btn active px-2 md:px-6 py-1.5 md:py-3 rounded-lg md:rounded-2xl font-semibold transition-all duration-300 bg-gradient-to-r from-orange-400 to-orange-600 text-white shadow-lg hover:shadow-xl transform hover:scale-105 text-xs md:text-sm"
+           data-filter="all">
+           🌟 Todas
+         </button>
+         <button 
+           class="filter-btn px-2 md:px-6 py-1.5 md:py-3 rounded-lg md:rounded-2xl font-semibold transition-all duration-300 bg-white text-teal-800 border-2 border-orange-200 hover:bg-orange-50 hover:border-orange-400 transform hover:scale-105 text-xs md:text-sm"
+           data-filter="genesis">
+           📖 Génesis
+         </button>
+         <button 
+           class="filter-btn px-2 md:px-6 py-1.5 md:py-3 rounded-lg md:rounded-2xl font-semibold transition-all duration-300 bg-white text-teal-800 border-2 border-orange-200 hover:bg-orange-50 hover:border-orange-400 transform hover:scale-105 text-xs md:text-sm"
+           data-filter="exodus">
+           🏔️ Éxodo
+         </button>
+         <button 
+           class="filter-btn px-2 md:px-6 py-1.5 md:py-3 rounded-lg md:rounded-2xl font-semibold transition-all duration-300 bg-white text-teal-800 border-2 border-orange-200 hover:bg-orange-50 hover:border-orange-400 transform hover:scale-105 text-xs md:text-sm"
+           data-filter="daniel">
+           🦁 Daniel
+         </button>
+         <button 
+           class="filter-btn px-2 md:px-6 py-1.5 md:py-3 rounded-lg md:rounded-2xl font-semibold transition-all duration-300 bg-white text-teal-800 border-2 border-orange-200 hover:bg-orange-50 hover:border-orange-400 transform hover:scale-105 text-xs md:text-sm"
+           data-filter="jonas">
+           🐋 Jonás
+         </button>
+         <button 
+           class="filter-btn px-2 md:px-6 py-1.5 md:py-3 rounded-lg md:rounded-2xl font-semibold transition-all duration-300 bg-white text-teal-800 border-2 border-orange-200 hover:bg-orange-50 hover:border-orange-400 transform hover:scale-105 text-xs md:text-sm"
+           data-filter="jesus">
+           ✝️ Jesús
+         </button>
+      </div>
+
+      <!-- Search Bar -->
+      <div class="max-w-md mx-auto px-2">
+        <div class="relative">
+          <div class="absolute inset-y-0 left-0 pl-3 md:pl-4 flex items-center pointer-events-none">
+            <svg class="w-4 md:w-5 h-4 md:h-5 text-orange-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+            </svg>
+          </div>
+          <input 
+            type="text" 
+            id="search-stories"
+            class="w-full pl-10 md:pl-12 pr-4 py-2.5 md:py-3 border-2 border-orange-200 rounded-lg md:rounded-xl focus:ring-2 focus:ring-orange-500 focus:border-transparent transition-all duration-300 text-sm md:text-base" 
+            placeholder="Busca tu historia favorita...">
+        </div>
+      </div>
+    </div>
+
+         <!-- Stories Grid -->
+     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-3 md:gap-8 mb-8 md:mb-12 px-2 md:px-0" id="stories-grid">
+      <!-- Genesis Stories -->
+      <div class="story-card group" data-book="genesis" data-title="creación">
+        <div class="bg-white rounded-xl md:rounded-3xl p-3 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-1 md:hover:-translate-y-4 cursor-pointer">
+          <div class="w-full h-24 md:h-48 bg-gradient-to-br from-orange-400 to-orange-600 rounded-lg md:rounded-2xl mb-3 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+            <!-- Imagen de portada de la creación -->
+            <img 
+              src="/public/lacreacion.webp" 
+              alt="La Creación - Portada" 
+              class="w-full h-full object-cover rounded-lg md:rounded-2xl"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <!-- Fallback SVG si la imagen no carga -->
+            <svg class="w-8 md:w-16 h-8 md:h-16 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-base md:text-xl font-bold text-teal-800 mb-1 md:mb-2 group-hover:text-orange-600 transition-colors">La Creación</h3>
+          <p class="text-gray-600 mb-2 md:mb-4 text-xs md:text-base">Dios crea el mundo en 7 días</p>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-orange-600 font-medium">📖 Génesis</span>
+            <div class="flex items-center space-x-1 md:space-x-2">
+              <span class="text-xs text-gray-500">⭐ 4.8</span>
+              <span class="text-xs text-gray-500">👶 3-8</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card group" data-book="genesis" data-title="noé">
+        <div class="bg-white rounded-xl md:rounded-3xl p-3 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-1 md:hover:-translate-y-4 cursor-pointer">
+          <div class="w-full h-24 md:h-48 bg-gradient-to-br from-teal-400 to-teal-600 rounded-lg md:rounded-2xl mb-3 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+            <!-- Imagen de portada del barco -->
+            <img 
+              src="/public/elarcadenoe.webp" 
+              alt="Noé y el Arca - Portada" 
+              class="w-full h-full object-cover rounded-lg md:rounded-2xl"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <!-- Fallback SVG si la imagen no carga -->
+            <svg class="w-8 md:w-16 h-8 md:h-16 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z"></path>
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 5a2 2 0 012-2h4a2 2 0 012 2v2H8V5z"></path>
+            </svg>
+          </div>
+          <h3 class="text-base md:text-xl font-bold text-teal-800 mb-1 md:mb-2 group-hover:text-orange-600 transition-colors">Noé y el Arca</h3>
+          <p class="text-gray-600 mb-2 md:mb-4 text-xs md:text-base">Un barco gigante y muchos animales</p>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-orange-600 font-medium">📖 Génesis</span>
+            <div class="flex items-center space-x-1 md:space-x-2">
+              <span class="text-xs text-gray-500">⭐ 4.9</span>
+              <span class="text-xs text-gray-500">👶 4-10 años</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Exodus Stories -->
+      <div class="story-card group" data-book="exodus" data-title="moses">
+        <div class="bg-white rounded-xl md:rounded-3xl p-3 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-1 md:hover:-translate-y-4 cursor-pointer">
+          <div class="w-full h-24 md:h-48 bg-gradient-to-br from-yellow-400 to-orange-500 rounded-lg md:rounded-2xl mb-3 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+            <!-- Imagen de portada de Moisés -->
+            <img 
+              src="/public/moises.webp" 
+              alt="Moisés y el Mar - Portada" 
+              class="w-full h-full object-cover rounded-lg md:rounded-2xl"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <!-- Fallback SVG si la imagen no carga -->
+            <svg class="w-8 md:w-16 h-8 md:h-16 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-base md:text-xl font-bold text-teal-800 mb-1 md:mb-2 group-hover:text-orange-600 transition-colors">Moisés y el Mar</h3>
+          <p class="text-gray-600 mb-2 md:mb-4 text-xs md:text-base">El mar se abre en dos</p>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-orange-600 font-medium">🏔️ Éxodo</span>
+            <div class="flex items-center space-x-1 md:space-x-2">
+              <span class="text-xs text-gray-500">⭐ 4.7</span>
+              <span class="text-xs text-gray-500">👶 5-12 años</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Daniel Stories -->
+      <div class="story-card group" data-book="daniel" data-title="daniel">
+        <div class="bg-white rounded-xl md:rounded-3xl p-3 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-1 md:hover:-translate-y-4 cursor-pointer">
+          <div class="w-full h-24 md:h-48 bg-gradient-to-br from-purple-400 to-purple-600 rounded-lg md:rounded-2xl mb-3 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+            <!-- Imagen de portada de Daniel -->
+            <img 
+              src="/public/daniel.webp" 
+              alt="Daniel y los Leones - Portada" 
+              class="w-full h-full object-cover rounded-lg md:rounded-2xl"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <!-- Fallback SVG si la imagen no carga -->
+            <svg class="w-8 md:w-16 h-8 md:h-16 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-base md:text-xl font-bold text-teal-800 mb-1 md:mb-2 group-hover:text-orange-600 transition-colors">Daniel y los Leones</h3>
+          <p class="text-gray-600 mb-2 md:mb-4 text-xs md:text-base">Valentía en la cueva de leones</p>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-orange-600 font-medium">🦁 Daniel</span>
+            <div class="flex items-center space-x-1 md:space-x-2">
+              <span class="text-xs text-gray-500">⭐ 4.9</span>
+              <span class="text-xs text-gray-500">👶 4-10 años</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jonah Stories -->
+      <div class="story-card group" data-book="jonas" data-title="jonas">
+        <div class="bg-white rounded-xl md:rounded-3xl p-3 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-1 md:hover:-translate-y-4 cursor-pointer">
+          <div class="w-full h-24 md:h-48 bg-gradient-to-br from-blue-400 to-blue-600 rounded-lg md:rounded-2xl mb-3 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+            <!-- Imagen de portada de Jonás -->
+            <img 
+              src="/public/jonas.webp" 
+              alt="Jonás y la Ballena - Portada" 
+              class="w-full h-full object-cover rounded-lg md:rounded-2xl"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <!-- Fallback SVG si la imagen no carga -->
+            <svg class="w-8 md:w-16 h-8 md:h-16 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z"></path>
+            </svg>
+          </div>
+          <h3 class="text-base md:text-xl font-bold text-teal-800 mb-1 md:mb-2 group-hover:text-orange-600 transition-colors">Jonás y la Ballena</h3>
+          <p class="text-gray-600 mb-2 md:mb-4 text-xs md:text-base">Una aventura bajo el mar</p>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-orange-600 font-medium">🐋 Jonás</span>
+            <div class="flex items-center space-x-1 md:space-x-2">
+              <span class="text-xs text-gray-500">⭐ 4.6</span>
+              <span class="text-xs text-gray-500">👶 3-9 años</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Jesus Stories -->
+      <div class="story-card group" data-book="jesus" data-title="nativity">
+        <div class="bg-white rounded-xl md:rounded-3xl p-3 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-1 md:hover:-translate-y-4 cursor-pointer">
+          <div class="w-full h-24 md:h-48 bg-gradient-to-br from-green-400 to-green-600 rounded-lg md:rounded-2xl mb-3 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+            <!-- Imagen de portada del Nacimiento -->
+            <img 
+              src="/public/nacimientodejesus.webp" 
+              alt="El Nacimiento de Jesús - Portada" 
+              class="w-full h-full object-cover rounded-lg md:rounded-2xl"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <!-- Fallback SVG si la imagen no carga -->
+            <svg class="w-8 md:w-16 h-8 md:h-16 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"></path>
+            </svg>
+          </div>
+          <h3 class="text-base md:text-xl font-bold text-teal-800 mb-1 md:mb-2 group-hover:text-orange-600 transition-colors">El Nacimiento de Jesús</h3>
+          <p class="text-gray-600 mb-2 md:mb-4 text-xs md:text-base">Una noche especial en Belén</p>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-orange-600 font-medium">✝️ Jesús</span>
+            <div class="flex items-center space-x-1 md:space-x-2">
+              <span class="text-xs text-gray-500">⭐ 5.0</span>
+              <span class="text-xs text-gray-500">👶 2-8 años</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="story-card group" data-book="jesus" data-title="miracles">
+        <div class="bg-white rounded-xl md:rounded-3xl p-3 md:p-6 shadow-xl hover:shadow-2xl transition-all duration-500 border border-orange-200 hover:border-orange-400 transform hover:-translate-y-1 md:hover:-translate-y-4 cursor-pointer">
+          <div class="w-full h-24 md:h-48 bg-gradient-to-br from-pink-400 to-pink-600 rounded-lg md:rounded-2xl mb-3 md:mb-6 flex items-center justify-center group-hover:scale-105 transition-transform duration-300 relative overflow-hidden">
+            <!-- Imagen de portada de los Milagros -->
+            <img 
+              src="/public/jesustentado.webp" 
+              alt="Los Milagros de Jesús - Portada" 
+              class="w-full h-full object-cover rounded-lg md:rounded-2xl"
+              onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';"
+            />
+            <!-- Fallback SVG si la imagen no carga -->
+            <svg class="w-8 md:w-16 h-8 md:h-16 text-white absolute inset-0 m-auto" fill="none" stroke="currentColor" viewBox="0 0 24 24" style="display: none;">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"></path>
+            </svg>
+          </div>
+          <h3 class="text-base md:text-xl font-bold text-teal-800 mb-1 md:mb-2 group-hover:text-orange-600 transition-colors">Los Milagros de Jesús</h3>
+          <p class="text-gray-600 mb-2 md:mb-4 text-xs md:text-base">Historias de amor y poder</p>
+          <div class="flex items-center justify-between">
+            <span class="text-xs text-orange-600 font-medium">✝️ Jesús</span>
+            <div class="flex items-center space-x-1 md:space-x-2">
+              <span class="text-xs text-gray-500">⭐ 4.8</span>
+              <span class="text-xs text-gray-500">👶 4-12 años</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Load More Button -->
+    <div class="text-center">
+      <button class="load-more-btn bg-gradient-to-r from-orange-400 to-orange-600 text-white py-4 px-8 rounded-2xl font-semibold hover:from-orange-500 hover:to-orange-700 transition-all duration-300 transform hover:scale-105 shadow-lg hover:shadow-xl">
+        <svg class="w-5 h-5 inline mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+        </svg>
+        Cargar Más Historias
+      </button>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+<script>
+  // Stories data
+  const storiesData = {
+    'creación': {
+      title: 'La Creación',
+      book: 'Génesis',
+      emoji: '📖',
+      canvaUrl: 'https://www.youtube.com/embed/WsAuZzJw7cc?si=mzujMF5MKKk86VLR',
+      content: 'En el principio, Dios creó los cielos y la tierra...',
+      ageRange: '3-8 años',
+      rating: 4.8,
+      audioUrl: '/src/assets/audio/creacion.mp3',
+      duration: '3:45'
+    },
+    'noé': {
+      title: 'Noé y el Arca',
+      book: 'Génesis',
+      emoji: '📖',
+      canvaUrl: '/src/assets/elarcadenoe.mp4',
+      content: 'Dios le dijo a Noé que construyera un barco gigante...',
+      ageRange: '4-10 años',
+      rating: 4.9,
+      audioUrl: '/src/assets/audio/noe.mp3',
+      duration: '5:32'
+    },
+    'moses': {
+      title: 'Moisés y el Mar',
+      book: 'Éxodo',
+      emoji: '🏔️',
+      canvaUrl: 'https://www.youtube.com/embed/t1RdNNCBnKQ?si=o5HmXiIgLwIlHYdz',
+      content: 'Moisés levantó su vara y el mar se abrió...',
+      ageRange: '5-12 años',
+      rating: 4.7,
+      audioUrl: '/src/assets/audio/moises.mp3',
+      duration: '4:18'
+    },
+    'daniel': {
+      title: 'Daniel y los Leones',
+      book: 'Daniel',
+      emoji: '🦁',
+      canvaUrl: 'https://www.youtube.com/embed/PuAtcTCUCXc?si=4onpicePr04ubWlC',
+      content: 'Daniel oraba tres veces al día...',
+      ageRange: '4-10 años',
+      rating: 4.9,
+      audioUrl: '/src/assets/audio/daniel.mp3',
+      duration: '6:15'
+    },
+    'jonas': {
+      title: 'Jonás y la Ballena',
+      book: 'Jonás',
+      emoji: '🐋',
+      canvaUrl: 'https://www.youtube.com/embed/MtZ5rIVGjZY?si=9bo7eY8jkepzAfWE',
+      content: 'Jonás se negó a ir a Nínive...',
+      ageRange: '3-9 años',
+      rating: 4.6,
+      audioUrl: '/src/assets/audio/jonas.mp3',
+      duration: '4:52'
+    },
+    'nativity': {
+      title: 'El Nacimiento de Jesús',
+      book: 'Jesús',
+      emoji: '✝️',
+      canvaUrl: 'https://www.youtube.com/embed/DIlCaP3Y0iQ?si=xXbGAepHDyfNC8RI"',
+      content: 'En Belén nació un niño especial...',
+      ageRange: '2-8 años',
+      rating: 5.0,
+      audioUrl: '/src/assets/audio/nativity.mp3',
+      duration: '3:28'
+    },
+    'miracles': {
+      title: 'Las 3 tentaciones de Jesús',
+      book: 'Jesús',
+      emoji: '✝️',
+      canvaUrl: 'https://www.youtube.com/embed/i3K-85Hz664?si=FSgvn8-xtjQP7HA7',
+      content: 'La historia nos mostrará cómo Jesús resistió las tentaciones del diablo...',
+      ageRange: '4-12 años',
+      rating: 4.8,
+      audioUrl: '/src/assets/audio/milagros.mp3',
+      duration: '7:12'
+    }
+  };
+
+  // Global cleanup function for overlays
+  function cleanupFullscreenOverlay() {
+    try {
+      const existingOverlay = document.getElementById('story-fullscreen-container');
+      if (existingOverlay && existingOverlay.parentNode) {
+        existingOverlay.parentNode.removeChild(existingOverlay);
+      }
+      
+      // Restore body overflow
+      if (document.body.style.overflow === 'hidden') {
+        document.body.style.overflow = 'auto';
+      }
+      
+      // Ensure all story cards are visible
+      const storyCards = document.querySelectorAll('.story-card');
+      storyCards.forEach(card => {
+        (card as HTMLElement).style.display = 'block';
+        (card as HTMLElement).style.visibility = 'visible';
+        (card as HTMLElement).style.opacity = '1';
+      });
+    } catch (error) {
+      // Silent error handling for production
+    }
+  }
+
+  // Filter functionality
+  document.addEventListener('DOMContentLoaded', function() {
+    // Cleanup any existing overlays on page load
+    cleanupFullscreenOverlay();
+    
+    // Ensure all story cards are visible
+    const storyCards = document.querySelectorAll('.story-card');
+    storyCards.forEach(card => {
+      (card as HTMLElement).style.display = 'block';
+      (card as HTMLElement).style.visibility = 'visible';
+      (card as HTMLElement).style.opacity = '1';
+    });
+    
+    // Cleanup on page unload
+    window.addEventListener('beforeunload', function() {
+      cleanupFullscreenOverlay();
+    });
+    
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const searchInput = document.getElementById('search-stories') as HTMLInputElement;
+    const modal = document.getElementById('book-modal');
+    const closeModal = document.getElementById('close-modal');
+    const modalTitle = document.getElementById('modal-title');
+    const modalSubtitle = document.getElementById('modal-subtitle');
+    const bookCover = document.getElementById('book-cover');
+    const canvaViewer = document.getElementById('canva-viewer');
+    const canvaIframe = document.getElementById('canva-iframe') as HTMLIFrameElement;
+    const closeCanva = document.getElementById('close-canva');
+
+    // Filter stories
+    filterBtns.forEach(btn => {
+      btn.addEventListener('click', function(this: HTMLElement) {
+        const filter = this.getAttribute('data-filter');
+        
+        // Update active button
+        filterBtns.forEach(b => {
+          b.classList.remove('active', 'bg-gradient-to-r', 'from-orange-400', 'to-orange-600', 'text-white', 'shadow-lg');
+          b.classList.add('bg-white', 'text-teal-800', 'border-2', 'border-orange-200');
+        });
+        this.classList.add('active', 'bg-gradient-to-r', 'from-orange-400', 'to-orange-600', 'text-white', 'shadow-lg');
+        this.classList.remove('bg-white', 'text-teal-800', 'border-2', 'border-orange-200');
+
+        // Filter cards
+        storyCards.forEach(card => {
+          const book = card.getAttribute('data-book');
+          if (filter === 'all' || book === filter) {
+            (card as HTMLElement).style.display = 'block';
+            (card as HTMLElement).style.animation = 'fadeIn 0.5s ease-in';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    });
+
+    // Search functionality
+    if (searchInput) {
+      searchInput.addEventListener('input', function() {
+        const searchTerm = this.value.toLowerCase();
+        
+        storyCards.forEach(card => {
+          const title = card.getAttribute('data-title')?.toLowerCase() || '';
+          const book = card.getAttribute('data-book')?.toLowerCase() || '';
+          
+          if (title.includes(searchTerm) || book.includes(searchTerm)) {
+            (card as HTMLElement).style.display = 'block';
+            (card as HTMLElement).style.animation = 'fadeIn 0.5s ease-in';
+          } else {
+            (card as HTMLElement).style.display = 'none';
+          }
+        });
+      });
+    }
+
+    // Open modal
+    storyCards.forEach(card => {
+      card.addEventListener('click', function(this: HTMLElement) {
+        const storyId = this.getAttribute('data-title');
+        const story = storiesData[storyId as keyof typeof storiesData];
+        
+        // Todas las historias ahora abren en pantalla completa con el mismo formato
+        if (story) {
+          const canvaUrl = story.canvaUrl || 'https://www.canva.com/design/DAGvWtPgV0M/CHSfqT5BkEKDK297XOzTIQ/view?embed';
+          
+          // Cleanup any existing overlays first
+          cleanupFullscreenOverlay();
+          
+          // Crear contenedor principal
+          const fullscreenContainer = document.createElement('div');
+          fullscreenContainer.id = 'story-fullscreen-container';
+          fullscreenContainer.style.position = 'fixed';
+          fullscreenContainer.style.top = '0';
+          fullscreenContainer.style.left = '0';
+          fullscreenContainer.style.width = '100%';
+          fullscreenContainer.style.height = '100%';
+          fullscreenContainer.style.zIndex = '99999';
+          fullscreenContainer.style.backgroundColor = 'white';
+          fullscreenContainer.style.display = 'flex';
+          fullscreenContainer.style.flexDirection = 'column';
+          fullscreenContainer.style.overflow = 'hidden';
+          
+          // Mobile-specific improvements
+          if (window.innerWidth <= 768) {
+            fullscreenContainer.style.fontSize = '14px';
+          }
+          
+          // Crear header con título y controles
+          const header = document.createElement('div');
+          header.style.background = 'linear-gradient(135deg, #f97316, #ea580c)';
+          header.style.color = 'white';
+          header.style.padding = 'clamp(0.75rem, 3vw, 1rem) clamp(1rem, 4vw, 2rem)';
+          header.style.display = 'flex';
+          header.style.justifyContent = 'space-between';
+          header.style.alignItems = 'center';
+          header.style.boxShadow = '0 4px 6px rgba(0, 0, 0, 0.1)';
+          header.style.flexWrap = 'wrap';
+          header.style.gap = 'clamp(0.5rem, 2vw, 1rem)';
+          header.style.minHeight = 'clamp(60px, 15vw, 80px)';
+          
+          const title = document.createElement('h2');
+          title.textContent = story.title;
+          title.style.margin = '0';
+          title.style.fontSize = 'clamp(1rem, 4vw, 1.5rem)';
+          title.style.fontWeight = 'bold';
+          title.style.flex = '1';
+          title.style.minWidth = 'clamp(150px, 40vw, 200px)';
+          title.style.lineHeight = '1.2';
+          
+          const controls = document.createElement('div');
+          controls.style.display = 'flex';
+          controls.style.alignItems = 'center';
+          controls.style.gap = 'clamp(0.5rem, 2vw, 1rem)';
+          controls.style.flexWrap = 'wrap';
+          controls.style.justifyContent = 'flex-end';
+          controls.style.flex = '1';
+          controls.style.minWidth = '0';
+          
+          // Crear descripción de la historia
+          const storyDescription = document.createElement('div');
+          storyDescription.style.background = 'rgba(255, 255, 255, 0.2)';
+          storyDescription.style.borderRadius = 'clamp(0.5rem, 2vw, 1rem)';
+          storyDescription.style.padding = 'clamp(0.5rem, 2vw, 0.75rem) clamp(0.75rem, 3vw, 1.5rem)';
+          storyDescription.style.display = 'flex';
+          storyDescription.style.alignItems = 'center';
+          storyDescription.style.gap = 'clamp(0.25rem, 1.5vw, 1rem)';
+          storyDescription.style.backdropFilter = 'blur(10px)';
+          storyDescription.style.border = '1px solid rgba(255, 255, 255, 0.3)';
+          storyDescription.style.flexWrap = 'wrap';
+          storyDescription.style.minWidth = 'clamp(200px, 60vw, 280px)';
+          storyDescription.style.maxWidth = 'clamp(250px, 80vw, 400px)';
+          storyDescription.style.flex = '1';
+          storyDescription.style.minWidth = '0';
+          
+          const descriptionIcon = document.createElement('div');
+          descriptionIcon.innerHTML = '📖';
+          descriptionIcon.style.fontSize = 'clamp(1.25rem, 4vw, 2rem)';
+          descriptionIcon.style.display = 'flex';
+          descriptionIcon.style.alignItems = 'center';
+          descriptionIcon.style.justifyContent = 'center';
+          descriptionIcon.style.minWidth = 'clamp(32px, 8vw, 44px)';
+          descriptionIcon.style.minHeight = 'clamp(32px, 8vw, 44px)';
+          descriptionIcon.style.flexShrink = '0';
+          
+          const descriptionText = document.createElement('div');
+          descriptionText.innerHTML = `
+            <div style="font-size: clamp(0.5rem, 2vw, 0.75rem); opacity: 0.9; color: white; line-height: 1.3; word-wrap: break-word;">${story.content || 'Una hermosa historia de la Biblia contada especialmente para niños.'}</div>
+          `;
+          descriptionText.style.flex = '1';
+          descriptionText.style.minWidth = '0';
+          
+          storyDescription.appendChild(descriptionIcon);
+          storyDescription.appendChild(descriptionText);
+          
+          // Crear botón de cerrar
+          const closeButton = document.createElement('button');
+          closeButton.innerHTML = `
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          `;
+          closeButton.style.background = 'rgba(255, 255, 255, 0.2)';
+          closeButton.style.color = 'white';
+          closeButton.style.border = 'none';
+          closeButton.style.borderRadius = '50%';
+          closeButton.style.width = 'clamp(40px, 10vw, 50px)';
+          closeButton.style.height = 'clamp(40px, 10vw, 50px)';
+          closeButton.style.cursor = 'pointer';
+          closeButton.style.display = 'flex';
+          closeButton.style.alignItems = 'center';
+          closeButton.style.justifyContent = 'center';
+          closeButton.style.transition = 'all 0.3s ease';
+          closeButton.style.flexShrink = '0';
+          
+          controls.appendChild(storyDescription); // Added story description
+          controls.appendChild(closeButton);
+          header.appendChild(title);
+          header.appendChild(controls);
+          
+          // Crear iframe para Canva
+          const fullscreenIframe = document.createElement('iframe');
+          fullscreenIframe.src = canvaUrl;
+          fullscreenIframe.style.flex = '1';
+          fullscreenIframe.style.border = 'none';
+          fullscreenIframe.style.width = '100%';
+          fullscreenIframe.style.height = '100%';
+          fullscreenIframe.setAttribute('allow', 'fullscreen');
+          fullscreenIframe.setAttribute('allowfullscreen', 'true');
+          
+          // Add error handling for iframe
+          fullscreenIframe.onerror = function() {
+            // Show a fallback message
+            fullscreenIframe.style.display = 'none';
+            const errorMessage = document.createElement('div');
+            errorMessage.style.display = 'flex';
+            errorMessage.style.alignItems = 'center';
+            errorMessage.style.justifyContent = 'center';
+            errorMessage.style.height = '100%';
+            errorMessage.style.flex = '1';
+            errorMessage.style.background = 'linear-gradient(135deg, #fef3c7, #fed7aa)';
+            errorMessage.style.color = '#92400e';
+            errorMessage.style.fontSize = '1.5rem';
+            errorMessage.style.fontWeight = 'bold';
+            errorMessage.innerHTML = `
+              <div style="text-align: center;">
+                <div style="font-size: 4rem; margin-bottom: 1rem;">📖</div>
+                <div>Contenido no disponible</div>
+                <div style="font-size: 1rem; margin-top: 0.5rem; opacity: 0.7;">Intenta de nuevo más tarde</div>
+              </div>
+            `;
+            fullscreenContainer.appendChild(errorMessage);
+          };
+          
+          // Event listeners
+          
+          // Función para limpiar y remover el overlay
+          const cleanupOverlay = () => {
+            // Use the global cleanup function
+            cleanupFullscreenOverlay();
+            
+            // Remover el event listener de Escape
+            document.removeEventListener('keydown', handleEscape);
+          };
+          
+          closeButton.addEventListener('click', cleanupOverlay);
+          
+          // Agregar funcionalidad de cerrar con Escape
+          const handleEscape = (e: KeyboardEvent) => {
+            if (e.key === 'Escape') {
+              cleanupOverlay();
+            }
+          };
+          
+          document.addEventListener('keydown', handleEscape);
+          
+          // Agregar elementos al body
+          fullscreenContainer.appendChild(header);
+          fullscreenContainer.appendChild(fullscreenIframe);
+          
+          try {
+            document.body.appendChild(fullscreenContainer);
+            document.body.style.overflow = 'hidden';
+          } catch (error) {
+            // Fallback: try to remove any existing overlays and try again
+            cleanupFullscreenOverlay();
+            try {
+              document.body.appendChild(fullscreenContainer);
+              document.body.style.overflow = 'hidden';
+            } catch (fallbackError) {
+              // Silent error handling for production
+            }
+          }
+          return;
+        }
+        
+        // Fallback para el modal original (ya no se usa pero se mantiene por compatibilidad)
+        if (story && modal && modalTitle && modalSubtitle) {
+          const storyData = story as any; // Type assertion for compatibility
+          modalTitle.textContent = storyData.title || 'Historia';
+          modalSubtitle.textContent = `${storyData.emoji || '📖'} ${storyData.book || 'Biblia'} - Historia para niños`;
+          
+          modal.classList.remove('hidden');
+          modal.classList.add('flex');
+          document.body.style.overflow = 'hidden';
+        }
+      });
+    });
+
+    // Book cover click - show Canva content
+    if (bookCover) {
+      bookCover.addEventListener('click', function() {
+        const storyId = modalTitle?.textContent?.toLowerCase().replace(/\s+/g, '') || '';
+        const story = storiesData[storyId as keyof typeof storiesData] || storiesData['noé'];
+        
+        if (canvaViewer && canvaIframe) {
+          // Use the Canva URL
+          const canvaUrl = story.canvaUrl || 'https://www.canva.com/design/DAGvWtPgV0M/CHSfqT5BkEKDK297XOzTIQ/view';
+          canvaIframe.src = canvaUrl;
+          bookCover.classList.add('hidden');
+          canvaViewer.classList.remove('hidden');
+        }
+      });
+    }
+
+    // Close Canva viewer
+    if (closeCanva) {
+      closeCanva.addEventListener('click', function() {
+        if (canvaViewer && bookCover) {
+          canvaViewer.classList.add('hidden');
+          bookCover.classList.remove('hidden');
+          if (canvaIframe) {
+            canvaIframe.src = '';
+          }
+        }
+      });
+    }
+
+    // Close modal
+    if (closeModal) {
+      closeModal.addEventListener('click', function() {
+        if (modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = 'auto';
+          // Also cleanup any fullscreen overlays
+          cleanupFullscreenOverlay();
+        }
+      });
+    }
+
+    // Close modal on outside click
+    if (modal) {
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = 'auto';
+          // Also cleanup any fullscreen overlays
+          cleanupFullscreenOverlay();
+        }
+      });
+    }
+
+    // Keyboard navigation
+    document.addEventListener('keydown', function(e) {
+      if (e.key === 'Escape' && modal && !modal.classList.contains('hidden')) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+        // Also cleanup any fullscreen overlays
+        cleanupFullscreenOverlay();
+      }
+    });
+  });
+</script>
+
+<style>
+  @keyframes fade-in {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  @keyframes slide-up {
+    from { opacity: 0; transform: translateY(30px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  .animate-fade-in {
+    animation: fade-in 0.8s ease-out;
+  }
+  
+  .animate-slide-up {
+    animation: slide-up 0.8s ease-out;
+  }
+  
+  .animate-slide-up-delay {
+    animation: slide-up 0.8s ease-out 0.2s both;
+  }
+
+  .story-card {
+    transition: all 0.3s ease;
+  }
+
+  .story-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .filter-btn.active {
+    background: linear-gradient(to right, #f97316, #ea580c);
+    color: white;
+    box-shadow: 0 10px 25px rgba(249, 115, 22, 0.3);
+  }
+
+  #book-modal {
+    backdrop-filter: blur(10px);
+  }
+
+  .book-container {
+    background: linear-gradient(135deg, #fef3c7 0%, #fed7aa 100%);
+  }
+
+     /* Responsive adjustments */
+   @media (max-width: 768px) {
+     .filter-btn {
+       font-size: 0.75rem;
+       padding: 0.5rem 0.75rem;
+       margin-bottom: 0.25rem;
+     }
+     
+     #book-modal .bg-white {
+       margin: 0.5rem;
+       max-height: calc(100vh - 1rem);
+     }
+     
+     .story-card {
+       margin-bottom: 1rem;
+     }
+     
+     .book-container {
+       padding: 1rem;
+     }
+
+     /* Improved mobile spacing */
+     .container {
+       padding-left: 1rem;
+       padding-right: 1rem;
+     }
+
+     /* Better mobile typography */
+     h2 {
+       font-size: 1.5rem !important;
+       line-height: 1.2;
+     }
+
+     /* Mobile grid improvements */
+     .grid {
+       gap: 1rem !important;
+     }
+
+     /* Mobile card improvements */
+     .story-card .bg-white {
+       padding: 1rem !important;
+     }
+
+     /* Mobile search improvements */
+     #search-stories {
+       font-size: 0.875rem;
+       padding: 0.75rem 1rem;
+     }
+   }
+   
+   @media (max-width: 480px) {
+     .filter-btn {
+       font-size: 0.7rem;
+       padding: 0.4rem 0.6rem;
+       margin-bottom: 0.25rem;
+       min-width: 80px;
+     }
+     
+     .story-card {
+       margin-bottom: 0.5rem;
+     }
+
+     /* Extra small mobile improvements */
+     .container {
+       padding-left: 0.75rem;
+       padding-right: 0.75rem;
+     }
+
+     /* Smaller text for very small screens */
+     h2 {
+       font-size: 1.25rem !important;
+     }
+
+     .story-card h3 {
+       font-size: 0.875rem !important;
+     }
+
+     .story-card p {
+       font-size: 0.75rem !important;
+     }
+
+     /* Compact spacing for very small screens */
+     .story-card .bg-white {
+       padding: 0.75rem !important;
+     }
+
+     .story-card .w-full.h-24 {
+       height: 5rem !important;
+     }
+
+     /* Better touch targets */
+     .filter-btn,
+     .story-card {
+       min-height: 44px;
+     }
+   }
+
+   /* Additional mobile improvements */
+   @media (max-width: 640px) {
+     /* Improve fullscreen overlay for mobile */
+     #story-fullscreen-container {
+       position: fixed !important;
+       top: 0 !important;
+       left: 0 !important;
+       width: 100vw !important;
+       height: 100vh !important;
+       z-index: 99999 !important;
+     }
+
+     /* Better mobile header */
+     #story-fullscreen-container .header {
+       padding: 0.75rem 1rem !important;
+       min-height: 60px !important;
+     }
+
+     /* Mobile-friendly controls */
+     #story-fullscreen-container .controls {
+       gap: 0.5rem !important;
+       flex-wrap: wrap !important;
+     }
+
+     /* Mobile description improvements */
+     #story-fullscreen-container .storyDescription {
+       min-width: 200px !important;
+       max-width: 100% !important;
+       padding: 0.5rem 0.75rem !important;
+     }
+   }
+</style>
