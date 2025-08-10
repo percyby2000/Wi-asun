@@ -1,4 +1,4 @@
-# Tienda para Niños - WIÑASUN
+# Tienda para Niños - WIASUN
 
 Una tienda e-commerce moderna para niños con sistema de autenticación, panel de administración y integración con Supabase.
 
